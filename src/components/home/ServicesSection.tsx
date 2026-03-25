@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Paintbrush, Home, Building2, Blinds, ShieldCheck, Sofa } from "lucide-react";
+import { Paintbrush, Home, Building2 } from "lucide-react";
 
 const services = [
   {
@@ -21,24 +21,6 @@ const services = [
     title: "Rentas Cortas & Airbnb",
     description: "Acabados y decoración optimizados para rentabilidad en plataformas de alquiler temporal.",
     href: "/servicios/rentas-cortas",
-  },
-  {
-    icon: Blinds,
-    title: "Cortinas, Persianas y Toldos",
-    description: "Soluciones a medida para control de luz y privacidad con las mejores marcas del mercado.",
-    href: "/ventas/cortinas-persianas",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Películas de Protección Solar",
-    description: "Protege tus espacios con películas de alta tecnología que reducen el calor y los rayos UV.",
-    href: "/ventas/peliculas-solares",
-  },
-  {
-    icon: Sofa,
-    title: "Mobiliario Exterior",
-    description: "Mobiliario resistente y elegante para terrazas, jardines y espacios al aire libre.",
-    href: "/ventas/mobiliario-exterior",
   },
 ];
 
