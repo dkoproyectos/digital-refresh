@@ -38,7 +38,7 @@ const ProjectsSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="card-project aspect-[4/3] rounded overflow-hidden"
+              className="card-project group aspect-[4/3] rounded overflow-hidden"
             >
               <img src={p.img} alt={p.title} loading="lazy" width={800} height={800} />
               <div className="overlay">
