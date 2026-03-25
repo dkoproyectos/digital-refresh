@@ -120,7 +120,7 @@
   }
 
   .card-project {
-    @apply relative overflow-hidden group cursor-pointer;
+    @apply relative overflow-hidden cursor-pointer;
   }
 
   .card-project img {
