@@ -21,6 +21,12 @@ const MobiliarioExterior = lazy(() => import("./pages/ventas/MobiliarioExterior"
 const Proyectos = lazy(() => import("./pages/Proyectos"));
 const Contacto = lazy(() => import("./pages/Contacto"));
 
+// Product landing pages
+const RecubrimientoProduct = lazy(() => import("./pages/ventas/recubrimiento/[slug]"));
+const PeliculasProduct = lazy(() => import("./pages/ventas/peliculas-solares/[slug]"));
+const CortinasProduct = lazy(() => import("./pages/ventas/cortinas-persianas/[slug]"));
+const MobiliarioProduct = lazy(() => import("./pages/ventas/mobiliario-exterior/[slug]"));
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -39,9 +45,13 @@ const App = () => (
             <Route path="/servicios/rentas-cortas" element={<RentasCortas />} />
             <Route path="/ventas" element={<Ventas />} />
             <Route path="/ventas/recubrimiento" element={<Recubrimiento />} />
+            <Route path="/ventas/recubrimiento/:slug" element={<RecubrimientoProduct />} />
             <Route path="/ventas/peliculas-solares" element={<PeliculasSolares />} />
+            <Route path="/ventas/peliculas-solares/:slug" element={<PeliculasProduct />} />
             <Route path="/ventas/cortinas-persianas" element={<CortinasPersianas />} />
+            <Route path="/ventas/cortinas-persianas/:slug" element={<CortinasProduct />} />
             <Route path="/ventas/mobiliario-exterior" element={<MobiliarioExterior />} />
+            <Route path="/ventas/mobiliario-exterior/:slug" element={<MobiliarioProduct />} />
             <Route path="/proyectos" element={<Proyectos />} />
             <Route path="/contacto" element={<Contacto />} />
             <Route path="*" element={<NotFound />} />

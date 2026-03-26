@@ -2,10 +2,13 @@ import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
 import { motion } from "framer-motion";
-import { CheckCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { recubrimientoContent } from "@/lib/content/sales";
+import { recubrimientoProducts } from "@/lib/content/products/recubrimiento";
 
 const c = recubrimientoContent;
+const productSlugs = Object.keys(recubrimientoProducts);
 
 const Recubrimiento = () => (
   <PageLayout>
@@ -23,35 +26,34 @@ const Recubrimiento = () => (
         <p className="section-label">Nuestros Productos</p>
         <h2 className="section-title">Catálogo de <span>recubrimientos</span></h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {c.products.map((p, i) => (
-            <motion.div key={p.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="bg-card p-6 border border-border hover:border-secondary/30 transition-colors">
-              <CheckCircle size={20} className="text-secondary mb-3" />
-              <h3 className="font-display text-lg font-bold text-primary mb-2">{p.name}</h3>
-              <p className="text-muted-foreground font-body text-sm leading-relaxed">{p.description}</p>
-            </motion.div>
-          ))}
+          {productSlugs.map((slug, i) => {
+            const p = recubrimientoProducts[slug];
+            return (
+              <motion.div key={slug} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}>
+                <Link
+                  to={`/ventas/recubrimiento/${slug}`}
+                  className="block bg-card p-6 border border-border hover:border-secondary/30 hover:shadow-md transition-all group"
+                >
+                  {p.heroImage && (
+                    <div className="overflow-hidden rounded-sm mb-4 h-[180px]">
+                      <img src={p.heroImage.src} alt={p.heroImage.alt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                    </div>
+                  )}
+                  <h3 className="font-display text-lg font-bold text-primary mb-2">{p.productName}</h3>
+                  <p className="text-muted-foreground font-body text-sm leading-relaxed mb-3">{p.description}</p>
+                  <span className="inline-flex items-center gap-1 text-secondary text-xs font-body font-semibold uppercase tracking-wider group-hover:gap-2 transition-all">
+                    Ver producto <ArrowRight size={14} />
+                  </span>
+                </Link>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
 
-    {c.gallery && c.gallery.length > 0 && (
-      <section className="py-20 bg-muted/30">
-        <div className="container">
-          <p className="section-label">Proyectos realizados</p>
-          <h2 className="section-title">Inspiración en <span>recubrimientos</span></h2>
-          <div className="grid sm:grid-cols-3 gap-6">
-            {c.gallery.map((img, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="overflow-hidden rounded-sm">
-                <img src={img.src} alt={img.alt} className="w-full h-[260px] object-cover" />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-    )}
-
     {c.faqs && c.faqs.length > 0 && (
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-muted/30">
         <div className="container max-w-2xl">
           <p className="section-label">Preguntas Frecuentes</p>
           <h2 className="section-title">Resolvemos tus <span>dudas</span></h2>
@@ -67,15 +69,11 @@ const Recubrimiento = () => (
       </section>
     )}
 
-    <section className="py-20 bg-muted/30">
+    <section className="py-20 bg-background">
       <div className="container max-w-2xl text-center">
         <p className="section-label">Cotiza ahora</p>
         <h2 className="section-title">Transforma tus <span>paredes</span></h2>
-        <ContactForm
-          context={c.formContext}
-          variant="sales"
-          productOptions={c.products.map((p) => p.name)}
-        />
+        <ContactForm context={c.formContext} variant="sales" productOptions={c.products.map((p) => p.name)} />
       </div>
     </section>
   </PageLayout>

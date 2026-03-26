@@ -2,10 +2,13 @@ import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
 import { motion } from "framer-motion";
-import { CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 import { peliculasSolaresContent } from "@/lib/content/sales";
+import { peliculasProducts } from "@/lib/content/products/peliculas";
 
 const c = peliculasSolaresContent;
+const productSlugs = Object.keys(peliculasProducts);
 
 const PeliculasSolares = () => (
   <PageLayout>
@@ -23,19 +26,28 @@ const PeliculasSolares = () => (
         <p className="section-label">Tipos de Películas</p>
         <h2 className="section-title">Soluciones para cada <span>necesidad</span></h2>
         <div className="grid sm:grid-cols-2 gap-8">
-          {c.products.map((p, i) => (
-            <motion.div key={p.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="flex gap-5 bg-card p-6 border border-border hover:border-secondary/30 transition-colors">
-              {p.icon && (
-                <div className="w-12 h-12 flex-shrink-0 rounded-full bg-secondary/10 flex items-center justify-center">
-                  <p.icon size={22} className="text-secondary" />
-                </div>
-              )}
-              <div>
-                <h3 className="font-display text-lg font-bold text-primary mb-1">{p.name}</h3>
-                <p className="text-muted-foreground font-body text-sm leading-relaxed">{p.description}</p>
-              </div>
-            </motion.div>
-          ))}
+          {productSlugs.map((slug, i) => {
+            const p = peliculasProducts[slug];
+            return (
+              <motion.div key={slug} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
+                <Link
+                  to={`/ventas/peliculas-solares/${slug}`}
+                  className="flex gap-5 bg-card p-6 border border-border hover:border-secondary/30 hover:shadow-md transition-all group"
+                >
+                  <div className="w-12 h-12 flex-shrink-0 rounded-full bg-secondary/10 flex items-center justify-center">
+                    <ArrowRight size={22} className="text-secondary" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-lg font-bold text-primary mb-1">{p.productName}</h3>
+                    <p className="text-muted-foreground font-body text-sm leading-relaxed mb-2">{p.description}</p>
+                    <span className="inline-flex items-center gap-1 text-secondary text-xs font-body font-semibold uppercase tracking-wider group-hover:gap-2 transition-all">
+                      Ver producto <ArrowRight size={14} />
+                    </span>
+                  </div>
+                </Link>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -56,7 +68,7 @@ const PeliculasSolares = () => (
             </div>
           </div>
           {c.hero.bannerImage && (
-            <img src={c.hero.bannerImage.src} alt="Películas solares beneficios" className="w-full h-[360px] object-cover rounded-sm" />
+            <img src={c.hero.bannerImage.src} alt="Películas solares" className="w-full h-[360px] object-cover rounded-sm" />
           )}
         </div>
       </section>
@@ -66,11 +78,7 @@ const PeliculasSolares = () => (
       <div className="container max-w-2xl text-center">
         <p className="section-label">Cotiza ahora</p>
         <h2 className="section-title">Protege tus <span>espacios</span></h2>
-        <ContactForm
-          context={c.formContext}
-          variant="sales"
-          productOptions={c.products.map((p) => p.name)}
-        />
+        <ContactForm context={c.formContext} variant="sales" productOptions={c.products.map((p) => p.name)} />
       </div>
     </section>
   </PageLayout>

@@ -2,10 +2,13 @@ import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
 import { motion } from "framer-motion";
-import { CheckCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { mobiliarioContent } from "@/lib/content/sales";
+import { mobiliarioProducts } from "@/lib/content/products/mobiliario";
 
 const c = mobiliarioContent;
+const productSlugs = Object.keys(mobiliarioProducts);
 
 const MobiliarioExterior = () => (
   <PageLayout>
@@ -23,13 +26,28 @@ const MobiliarioExterior = () => (
         <p className="section-label">Nuestros Productos</p>
         <h2 className="section-title">Catálogo de <span>mobiliario</span></h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {c.products.map((p, i) => (
-            <motion.div key={p.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="bg-card p-6 border border-border hover:border-secondary/30 transition-colors">
-              <CheckCircle size={20} className="text-secondary mb-3" />
-              <h3 className="font-display text-lg font-bold text-primary mb-2">{p.name}</h3>
-              <p className="text-muted-foreground font-body text-sm leading-relaxed">{p.description}</p>
-            </motion.div>
-          ))}
+          {productSlugs.map((slug, i) => {
+            const p = mobiliarioProducts[slug];
+            return (
+              <motion.div key={slug} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}>
+                <Link
+                  to={`/ventas/mobiliario-exterior/${slug}`}
+                  className="block bg-card p-6 border border-border hover:border-secondary/30 hover:shadow-md transition-all group"
+                >
+                  {p.heroImage && (
+                    <div className="overflow-hidden rounded-sm mb-4 h-[180px]">
+                      <img src={p.heroImage.src} alt={p.heroImage.alt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                    </div>
+                  )}
+                  <h3 className="font-display text-lg font-bold text-primary mb-2">{p.productName}</h3>
+                  <p className="text-muted-foreground font-body text-sm leading-relaxed mb-3">{p.description}</p>
+                  <span className="inline-flex items-center gap-1 text-secondary text-xs font-body font-semibold uppercase tracking-wider group-hover:gap-2 transition-all">
+                    Ver producto <ArrowRight size={14} />
+                  </span>
+                </Link>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -38,11 +56,7 @@ const MobiliarioExterior = () => (
       <div className="container max-w-2xl text-center">
         <p className="section-label">Cotiza ahora</p>
         <h2 className="section-title">Equipa tu <span>exterior</span></h2>
-        <ContactForm
-          context={c.formContext}
-          variant="sales"
-          productOptions={c.products.map((p) => p.name)}
-        />
+        <ContactForm context={c.formContext} variant="sales" productOptions={c.products.map((p) => p.name)} />
       </div>
     </section>
   </PageLayout>
