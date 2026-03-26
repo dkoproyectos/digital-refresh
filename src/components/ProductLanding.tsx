@@ -12,6 +12,7 @@
  * ============================================================
  */
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { CheckCircle, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -19,6 +20,7 @@ import type { LucideIcon } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
+import QuoteModal from "@/components/QuoteModal";
 
 export interface ProductLandingData {
   /** Hero */
@@ -69,6 +71,7 @@ interface ProductLandingProps {
 
 const ProductLanding = ({ data }: ProductLandingProps) => {
   const d = data;
+  const [quoteOpen, setQuoteOpen] = useState(false);
 
   return (
     <PageLayout>
@@ -99,12 +102,12 @@ const ProductLanding = ({ data }: ProductLandingProps) => {
           </div>
           {/* Big CTA on banner */}
           <div className="absolute bottom-8 left-0 right-0 flex justify-center">
-            <a
-              href="#cotizar-producto"
+            <button
+              onClick={() => setQuoteOpen(true)}
               className="btn-gold text-base px-12 py-4 tracking-[3px] shadow-2xl"
             >
               Cotizar Ahora
-            </a>
+            </button>
           </div>
         </section>
       )}
@@ -260,6 +263,15 @@ const ProductLanding = ({ data }: ProductLandingProps) => {
           />
         </div>
       </section>
+
+      {/* Floating Quote Modal */}
+      <QuoteModal
+        open={quoteOpen}
+        onOpenChange={setQuoteOpen}
+        context={d.formContext}
+        productName={d.productName}
+        productOptions={[d.productName]}
+      />
     </PageLayout>
   );
 };
