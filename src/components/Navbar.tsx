@@ -38,7 +38,7 @@ const Navbar = () => {
           <NavItem href="/contacto" label="Contacto" />
         </div>
 
-        <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer" className="hidden lg:inline-flex btn-gold text-xs py-2 px-6 glow-pulse">
+        <a href="#cotizar" className="hidden lg:inline-flex btn-gold text-xs py-2 px-6 glow-pulse">
           Cotiza Gratis
         </a>
 
@@ -57,7 +57,7 @@ const Navbar = () => {
               <MobileDropdown label="Ventas" items={ventas} onItemClick={() => setMobileOpen(false)} />
               <MobileLink href="/proyectos" label="Proyectos" onClick={() => setMobileOpen(false)} />
               <MobileLink href="/contacto" label="Contacto" onClick={() => setMobileOpen(false)} />
-              <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer" className="btn-gold text-xs py-3 text-center mt-2">
+              <a href="#cotizar" onClick={() => setMobileOpen(false)} className="btn-gold text-xs py-3 text-center mt-2">
                 Cotiza Gratis
               </a>
             </div>
