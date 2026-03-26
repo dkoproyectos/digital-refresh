@@ -10,9 +10,9 @@ const Footer = () => (
           <h3 className="font-display text-3xl font-bold text-secondary mb-4">{siteConfig.shortName}</h3>
           <p className="text-primary-foreground/60 text-sm font-body leading-relaxed">{siteConfig.description}</p>
           <div className="flex gap-4 mt-6">
-            <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="text-primary-foreground/40 hover:text-secondary transition-colors"><Facebook size={18} /></a>
-            <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="text-primary-foreground/40 hover:text-secondary transition-colors"><Instagram size={18} /></a>
-            <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="text-primary-foreground/40 hover:text-secondary transition-colors"><Linkedin size={18} /></a>
+            <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="text-primary-foreground/40 hover:text-secondary hover:scale-125 hover:-translate-y-1 transition-all duration-300"><Facebook size={18} /></a>
+            <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="text-primary-foreground/40 hover:text-secondary hover:scale-125 hover:-translate-y-1 transition-all duration-300"><Instagram size={18} /></a>
+            <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="text-primary-foreground/40 hover:text-secondary hover:scale-125 hover:-translate-y-1 transition-all duration-300"><Linkedin size={18} /></a>
           </div>
         </div>
 

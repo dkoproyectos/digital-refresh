@@ -38,7 +38,7 @@ const Navbar = () => {
           <NavItem href="/contacto" label="Contacto" />
         </div>
 
-        <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer" className="hidden lg:inline-flex btn-gold text-xs py-2 px-6">
+        <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer" className="hidden lg:inline-flex btn-gold text-xs py-2 px-6 glow-pulse">
           Cotiza Gratis
         </a>
 
@@ -69,7 +69,7 @@ const Navbar = () => {
 };
 
 const NavItem = ({ href, label }: { href: string; label: string }) => (
-  <Link to={href} className="text-primary-foreground/70 hover:text-secondary transition-colors text-sm font-body font-medium uppercase tracking-wider">{label}</Link>
+  <Link to={href} className="nav-link-animated text-primary-foreground/70 hover:text-secondary transition-colors text-sm font-body font-medium uppercase tracking-wider">{label}</Link>
 );
 
 const DropdownNav = ({ label, items, open, onToggle, onClose }: { label: string; items: { label: string; href: string }[]; open: boolean; onToggle: () => void; onClose: () => void }) => (
@@ -79,9 +79,9 @@ const DropdownNav = ({ label, items, open, onToggle, onClose }: { label: string;
     </button>
     <AnimatePresence>
       {open && (
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 8 }} className="absolute top-full left-0 mt-2 w-64 bg-card border border-border rounded shadow-lg overflow-hidden">
-          {items.map((item) => (
-            <Link key={item.href} to={item.href} onClick={onClose} className="block px-5 py-3 text-sm font-body text-foreground hover:bg-muted hover:text-accent transition-colors border-b border-border last:border-0">{item.label}</Link>
+        <motion.div initial={{ opacity: 0, y: 10, scale: 0.95 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 10, scale: 0.95 }} transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }} className="absolute top-full left-0 mt-2 w-64 bg-card border border-border rounded shadow-xl overflow-hidden">
+          {items.map((item, i) => (
+            <Link key={item.href} to={item.href} onClick={onClose} className="block px-5 py-3 text-sm font-body text-foreground hover:bg-muted hover:text-accent hover:pl-7 transition-all duration-300 border-b border-border last:border-0">{item.label}</Link>
           ))}
         </motion.div>
       )}

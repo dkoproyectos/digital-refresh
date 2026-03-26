@@ -97,26 +97,72 @@
   }
 
   .btn-gold {
-    @apply inline-flex items-center justify-center px-8 py-3 text-sm font-semibold tracking-wider uppercase transition-all duration-300;
+    @apply inline-flex items-center justify-center px-8 py-3 text-sm font-semibold tracking-wider uppercase relative overflow-hidden;
     background: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--secondary)));
     color: white;
     letter-spacing: 2px;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+  }
+
+  .btn-gold::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.6s ease;
   }
 
   .btn-gold:hover {
-    box-shadow: var(--shadow-gold);
-    transform: translateY(-2px);
+    box-shadow: var(--shadow-gold), 0 0 30px hsl(var(--secondary) / 0.25);
+    transform: translateY(-3px) scale(1.02);
+  }
+
+  .btn-gold:hover::before {
+    left: 100%;
+  }
+
+  .btn-gold:active {
+    transform: translateY(0) scale(0.98);
+    transition-duration: 0.1s;
   }
 
   .btn-outline-light {
-    @apply inline-flex items-center justify-center px-8 py-3 text-sm font-semibold tracking-wider uppercase transition-all duration-300 border-2;
+    @apply inline-flex items-center justify-center px-8 py-3 text-sm font-semibold tracking-wider uppercase border-2 relative overflow-hidden;
     border-color: hsl(var(--secondary));
     color: hsl(var(--secondary));
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    background: transparent;
+  }
+
+  .btn-outline-light::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: hsl(var(--secondary));
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+    z-index: -1;
   }
 
   .btn-outline-light:hover {
-    background: hsl(var(--secondary));
     color: white;
+    border-color: hsl(var(--secondary));
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 24px hsl(var(--secondary) / 0.2);
+  }
+
+  .btn-outline-light:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .btn-outline-light:active {
+    transform: translateY(0) scale(0.98);
+    transition-duration: 0.1s;
   }
 
   .card-project {
@@ -145,6 +191,96 @@
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* Section reveal on scroll */
+.reveal-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-section.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Magnetic hover effect for interactive cards */
+.card-hover {
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.5s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-elevated);
+}
+
+/* Underline draw animation for nav links */
+.nav-link-animated {
+  position: relative;
+}
+
+.nav-link-animated::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: hsl(var(--secondary));
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.nav-link-animated:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Stagger children animation */
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: stagger-fade-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
+.stagger-children > *:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes stagger-fade-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Image reveal on hover */
+.img-reveal {
+  overflow: hidden;
+}
+
+.img-reveal img {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+}
+
+.img-reveal:hover img {
+  transform: scale(1.08);
+  filter: brightness(1.05);
+}
+
+/* Glow pulse for CTA sections */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px hsl(var(--secondary) / 0.15); }
+  50% { box-shadow: 0 0 40px hsl(var(--secondary) / 0.3); }
+}
+
+.glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
 }
 
 /* WhatsApp pulse animation */
