@@ -71,6 +71,7 @@ interface ProductLandingProps {
 
 const ProductLanding = ({ data }: ProductLandingProps) => {
   const d = data;
+  const [quoteOpen, setQuoteOpen] = useState(false);
 
   return (
     <PageLayout>
