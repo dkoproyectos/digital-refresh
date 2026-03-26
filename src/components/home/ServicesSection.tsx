@@ -1,28 +1,6 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Paintbrush, Home, Building2 } from "lucide-react";
-
-const services = [
-  {
-    icon: Paintbrush,
-    title: "Diseño de Interior Premium",
-    description: "Transformamos espacios con diseño exclusivo, materiales de alta gama y atención al detalle para proyectos residenciales y comerciales.",
-    href: "/servicios/diseno-premium",
-  },
-  {
-    icon: Home,
-    title: "Tu Hogar VIS",
-    description: "Soluciones inteligentes y accesibles para remodelación de apartamentos VIS, maximizando cada metro cuadrado.",
-    href: "/servicios/hogar-vis",
-  },
-  {
-    icon: Building2,
-    title: "Rentas Cortas & Airbnb",
-    description: "Acabados y decoración optimizados para rentabilidad en plataformas de alquiler temporal.",
-    href: "/servicios/rentas-cortas",
-  },
-];
+import { homeServices } from "@/lib/content/home";
 
 const ServicesSection = () => {
   const ref = useRef(null);
@@ -42,7 +20,7 @@ const ServicesSection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, i) => (
+          {homeServices.map((service, i) => (
             <motion.a
               key={service.title}
               href={service.href}
