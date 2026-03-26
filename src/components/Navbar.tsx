@@ -79,9 +79,9 @@ const DropdownNav = ({ label, items, open, onToggle, onClose }: { label: string;
     </button>
     <AnimatePresence>
       {open && (
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 8 }} className="absolute top-full left-0 mt-2 w-64 bg-card border border-border rounded shadow-lg overflow-hidden">
-          {items.map((item) => (
-            <Link key={item.href} to={item.href} onClick={onClose} className="block px-5 py-3 text-sm font-body text-foreground hover:bg-muted hover:text-accent transition-colors border-b border-border last:border-0">{item.label}</Link>
+        <motion.div initial={{ opacity: 0, y: 10, scale: 0.95 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 10, scale: 0.95 }} transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }} className="absolute top-full left-0 mt-2 w-64 bg-card border border-border rounded shadow-xl overflow-hidden">
+          {items.map((item, i) => (
+            <Link key={item.href} to={item.href} onClick={onClose} className="block px-5 py-3 text-sm font-body text-foreground hover:bg-muted hover:text-accent hover:pl-7 transition-all duration-300 border-b border-border last:border-0">{item.label}</Link>
           ))}
         </motion.div>
       )}
