@@ -38,7 +38,7 @@ const Navbar = () => {
           <NavItem href="/contacto" label="Contacto" />
         </div>
 
-        <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer" className="hidden lg:inline-flex btn-gold text-xs py-2 px-6">
+        <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer" className="hidden lg:inline-flex btn-gold text-xs py-2 px-6 glow-pulse">
           Cotiza Gratis
         </a>
 
@@ -69,7 +69,7 @@ const Navbar = () => {
 };
 
 const NavItem = ({ href, label }: { href: string; label: string }) => (
-  <Link to={href} className="text-primary-foreground/70 hover:text-secondary transition-colors text-sm font-body font-medium uppercase tracking-wider">{label}</Link>
+  <Link to={href} className="nav-link-animated text-primary-foreground/70 hover:text-secondary transition-colors text-sm font-body font-medium uppercase tracking-wider">{label}</Link>
 );
 
 const DropdownNav = ({ label, items, open, onToggle, onClose }: { label: string; items: { label: string; href: string }[]; open: boolean; onToggle: () => void; onClose: () => void }) => (
