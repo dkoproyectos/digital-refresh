@@ -7,7 +7,7 @@
  */
 
 import { Award, Users, Target, Heart, Shield, Lightbulb } from "lucide-react";
-import type { ValueItem, TimelineItem } from "./types";
+import type { ValueItem, TeamMember } from "./types";
 
 export const aboutHero = {
   label: "Nosotros",
@@ -16,12 +16,41 @@ export const aboutHero = {
   description: "Más de una década creando espacios que reflejan la identidad de cada cliente en Cali y el Valle del Cauca.",
 };
 
-export const timeline: TimelineItem[] = [
-  { year: "2014", text: "Fundación de DKO Proyectos en Cali con la visión de transformar la industria del diseño interior." },
-  { year: "2017", text: "Expansión a proyectos de construcción integral y remodelación de viviendas VIS." },
-  { year: "2020", text: "Lanzamiento de la línea de ventas: cortinas, películas solares y recubrimientos." },
-  { year: "2023", text: "Más de 500 proyectos completados y alianzas estratégicas con las mejores marcas." },
-  { year: "2026", text: "Consolidación como referente en diseño integral y soluciones para el hogar en el Valle del Cauca." },
+/**
+ * 🔌 Sanity: *[_type == "teamMember"] | order(order asc)
+ * Reemplaza name, role, description e image desde el CMS.
+ */
+export const teamMembers: TeamMember[] = [
+  {
+    name: "Nombre del Fundador",
+    role: "Director General",
+    description: "Líder visionario con más de 10 años de experiencia en diseño de interiores y gestión de proyectos.",
+    image: { src: "/placeholder.svg", alt: "Foto del Director General" },
+  },
+  {
+    name: "Nombre del Miembro",
+    role: "Diseñador(a) de Interiores",
+    description: "Especialista en crear ambientes funcionales y estéticos que reflejan la personalidad de cada cliente.",
+    image: { src: "/placeholder.svg", alt: "Foto del Diseñador de Interiores" },
+  },
+  {
+    name: "Nombre del Miembro",
+    role: "Coordinador(a) de Proyectos",
+    description: "Responsable de la planificación, ejecución y entrega puntual de cada proyecto.",
+    image: { src: "/placeholder.svg", alt: "Foto del Coordinador de Proyectos" },
+  },
+  {
+    name: "Nombre del Miembro",
+    role: "Asesor(a) Comercial",
+    description: "Encargado de guiar a los clientes en la selección de productos y soluciones ideales para su espacio.",
+    image: { src: "/placeholder.svg", alt: "Foto del Asesor Comercial" },
+  },
+  {
+    name: "Nombre del Miembro",
+    role: "Instalador(a) Técnico",
+    description: "Experto en la instalación profesional de cortinas, películas solares y recubrimientos.",
+    image: { src: "/placeholder.svg", alt: "Foto del Instalador Técnico" },
+  },
 ];
 
 export const companyValues: ValueItem[] = [
