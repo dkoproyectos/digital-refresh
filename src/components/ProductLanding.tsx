@@ -102,12 +102,12 @@ const ProductLanding = ({ data }: ProductLandingProps) => {
           </div>
           {/* Big CTA on banner */}
           <div className="absolute bottom-8 left-0 right-0 flex justify-center">
-            <a
-              href="#cotizar-producto"
+            <button
+              onClick={() => setQuoteOpen(true)}
               className="btn-gold text-base px-12 py-4 tracking-[3px] shadow-2xl"
             >
               Cotizar Ahora
-            </a>
+            </button>
           </div>
         </section>
       )}
@@ -263,6 +263,15 @@ const ProductLanding = ({ data }: ProductLandingProps) => {
           />
         </div>
       </section>
+
+      {/* Floating Quote Modal */}
+      <QuoteModal
+        open={quoteOpen}
+        onOpenChange={setQuoteOpen}
+        context={d.formContext}
+        productName={d.productName}
+        productOptions={[d.productName]}
+      />
     </PageLayout>
   );
 };
