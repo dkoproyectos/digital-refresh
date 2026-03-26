@@ -16,16 +16,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 80 20% 18%;
 
-    --primary: 59 32% 32%; /* #6E6C37 olive green - DKO brand */
+    --primary: 59 32% 22%; /* deeper olive green - better contrast */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 100 20% 30%; /* #4D5B3D dark forest green */
+    --secondary: 100 25% 24%; /* deeper forest green */
     --secondary-foreground: 0 0% 100%;
 
     --muted: 60 8% 91%;
     --muted-foreground: 80 8% 45%; /* #6B7360 */
 
-    --accent: 45 18% 50%; /* warm olive accent */
+    --accent: 45 30% 38%; /* richer warm olive accent - better contrast */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 3 80% 41%;
@@ -38,10 +38,10 @@
     --radius: 0.25rem;
 
     /* Extended tokens */
-    --gold: 59 32% 32%; /* olive green */
-    --bronze: 45 18% 50%; /* warm olive */
-    --navy: 80 20% 18%; /* dark olive (replaces navy) */
-    --navy-mid: 100 20% 24%; /* #3A4530 mid olive */
+    --gold: 59 32% 22%;
+    --bronze: 45 30% 38%;
+    --navy: 80 20% 14%; /* darker olive */
+    --navy-mid: 100 25% 18%;
     --warm-gray: 80 8% 45%;
     --warm-bg: 60 8% 96%;
     --cream: 0 0% 100%;
