@@ -12,6 +12,7 @@
  * ============================================================
  */
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { CheckCircle, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -19,6 +20,7 @@ import type { LucideIcon } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
+import QuoteModal from "@/components/QuoteModal";
 
 export interface ProductLandingData {
   /** Hero */
