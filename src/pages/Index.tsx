@@ -4,7 +4,6 @@ import ServicesSection from "@/components/home/ServicesSection";
 import WhyDKOSection from "@/components/home/WhyDKOSection";
 import VentasSection from "@/components/home/VentasSection";
 import ProjectsSection from "@/components/home/ProjectsSection";
-import AlliesSection from "@/components/home/AlliesSection";
 import CTASection from "@/components/home/CTASection";
 
 const Index = () => (
@@ -14,7 +13,6 @@ const Index = () => (
     <ServicesSection />
     <VentasSection />
     <ProjectsSection />
-    <AlliesSection />
     <CTASection />
   </PageLayout>
 );

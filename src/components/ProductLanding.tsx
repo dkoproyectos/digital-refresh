@@ -81,13 +81,13 @@ const ProductLanding = ({ data }: ProductLandingProps) => {
 
       {/* Banner image */}
       {d.heroImage && (
-        <section className="relative h-[35vh] min-h-[260px]">
+        <section className="relative h-[45vh] min-h-[320px]">
           <img
             src={d.heroImage.src}
             alt={d.heroImage.alt}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-primary/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/30 to-primary/10" />
           {/* Back link */}
           <div className="absolute top-6 left-6">
             <Link
@@ -96,6 +96,15 @@ const ProductLanding = ({ data }: ProductLandingProps) => {
             >
               ← {d.parentCategory.label}
             </Link>
+          </div>
+          {/* Big CTA on banner */}
+          <div className="absolute bottom-8 left-0 right-0 flex justify-center">
+            <a
+              href="#cotizar-producto"
+              className="btn-gold text-base px-12 py-4 tracking-[3px] shadow-2xl"
+            >
+              Cotizar Ahora
+            </a>
           </div>
         </section>
       )}
@@ -238,7 +247,7 @@ const ProductLanding = ({ data }: ProductLandingProps) => {
       )}
 
       {/* CTA Form */}
-      <section className="py-20 bg-background">
+      <section id="cotizar-producto" className="py-20 bg-background">
         <div className="container max-w-2xl text-center">
           <p className="section-label">Cotiza ahora</p>
           <h2 className="section-title">
