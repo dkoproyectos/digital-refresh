@@ -2,31 +2,44 @@ import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
 import { motion } from "framer-motion";
-import { aboutHero, timeline, companyValues } from "@/lib/content/about";
+import { aboutHero, teamMembers, companyValues } from "@/lib/content/about";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const Nosotros = () => (
   <PageLayout>
     <PageHero {...aboutHero} />
 
+    {/* Equipo */}
     <section className="py-20 bg-background">
       <div className="container">
-        <p className="section-label">Nuestra Historia</p>
-        <h2 className="section-title">Una trayectoria de <span>pasión</span> y compromiso</h2>
-        <div className="relative max-w-2xl mx-auto">
-          <div className="absolute left-4 top-0 bottom-0 w-px bg-border" />
-          {timeline.map((item, i) => (
-            <motion.div key={item.year} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="relative pl-12 pb-10 last:pb-0">
-              <div className="absolute left-0 top-1 w-8 h-8 rounded-full bg-secondary/10 border-2 border-secondary flex items-center justify-center">
-                <div className="w-2 h-2 rounded-full bg-secondary" />
-              </div>
-              <span className="font-display text-2xl font-bold text-secondary">{item.year}</span>
-              <p className="text-muted-foreground font-body text-sm mt-1 leading-relaxed">{item.text}</p>
+        <p className="section-label">Nuestro Equipo</p>
+        <h2 className="section-title">Las personas detrás de <span>DKO</span></h2>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {teamMembers.map((member, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="bg-card border border-border hover:border-secondary/30 transition-colors p-8 text-center group"
+            >
+              <Avatar className="w-24 h-24 mx-auto mb-5 ring-2 ring-secondary/20 group-hover:ring-secondary/50 transition-all">
+                <AvatarImage src={member.image.src} alt={member.image.alt} />
+                <AvatarFallback className="bg-secondary/10 text-secondary font-display text-xl">
+                  {member.name.split(" ").map(n => n[0]).join("").slice(0, 2)}
+                </AvatarFallback>
+              </Avatar>
+              <h3 className="font-display text-lg font-bold text-primary">{member.name}</h3>
+              <p className="text-secondary font-body text-sm font-medium mt-1">{member.role}</p>
+              <p className="text-muted-foreground font-body text-sm mt-3 leading-relaxed">{member.description}</p>
             </motion.div>
           ))}
         </div>
       </div>
     </section>
 
+    {/* Valores */}
     <section className="py-20 bg-muted/30">
       <div className="container">
         <p className="section-label">Nuestros Valores</p>

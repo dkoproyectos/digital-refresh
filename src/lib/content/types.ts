@@ -71,6 +71,14 @@ export interface TimelineItem {
   text: string;
 }
 
+/** Miembro del equipo */
+export interface TeamMember {
+  name: string;
+  role: string;
+  description: string;
+  image: CMSImage;
+}
+
 /** Valor de la empresa */
 export interface ValueItem {
   icon: LucideIcon;
