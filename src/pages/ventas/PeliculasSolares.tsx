@@ -25,25 +25,25 @@ const PeliculasSolares = () => (
       <div className="container">
         <p className="section-label">Tipos de Películas</p>
         <h2 className="section-title">Soluciones para cada <span>necesidad</span></h2>
-        <div className="grid sm:grid-cols-2 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {productSlugs.map((slug, i) => {
             const p = peliculasProducts[slug];
             return (
-              <motion.div key={slug} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
+              <motion.div key={slug} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}>
                 <Link
                   to={`/ventas/peliculas-solares/${slug}`}
-                  className="flex gap-5 bg-card p-6 border border-border hover:border-secondary/30 hover:shadow-md transition-all group"
+                  className="block bg-card p-6 border border-border hover:border-secondary/30 hover:shadow-md transition-all group"
                 >
-                  <div className="w-12 h-12 flex-shrink-0 rounded-full bg-secondary/10 flex items-center justify-center">
-                    <ArrowRight size={22} className="text-secondary" />
-                  </div>
-                  <div>
-                    <h3 className="font-display text-lg font-bold text-primary mb-1">{p.productName}</h3>
-                    <p className="text-muted-foreground font-body text-sm leading-relaxed mb-2">{p.description}</p>
-                    <span className="inline-flex items-center gap-1 text-secondary text-xs font-body font-semibold uppercase tracking-wider group-hover:gap-2 transition-all">
-                      Ver producto <ArrowRight size={14} />
-                    </span>
-                  </div>
+                  {p.heroImage && (
+                    <div className="overflow-hidden rounded-sm mb-4 h-[180px]">
+                      <img src={p.heroImage.src} alt={p.heroImage.alt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                    </div>
+                  )}
+                  <h3 className="font-display text-lg font-bold text-primary mb-2">{p.productName}</h3>
+                  <p className="text-muted-foreground font-body text-sm leading-relaxed mb-3">{p.description}</p>
+                  <span className="inline-flex items-center gap-1 text-secondary text-xs font-body font-semibold uppercase tracking-wider group-hover:gap-2 transition-all">
+                    Ver producto <ArrowRight size={14} />
+                  </span>
                 </Link>
               </motion.div>
             );

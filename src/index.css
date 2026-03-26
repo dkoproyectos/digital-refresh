@@ -19,8 +19,8 @@
     --primary: 59 32% 22%; /* deeper olive green - better contrast */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 100 25% 24%; /* deeper forest green */
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 55 40% 55%; /* warm golden olive - visible on dark AND light */
+    --secondary-foreground: 80 20% 12%;
 
     --muted: 60 8% 91%;
     --muted-foreground: 80 8% 45%; /* #6B7360 */
