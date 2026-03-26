@@ -10,8 +10,8 @@ import CTASection from "@/components/home/CTASection";
 const Index = () => (
   <PageLayout>
     <HeroSection />
-    <ServicesSection />
     <WhyDKOSection />
+    <ServicesSection />
     <VentasSection />
     <ProjectsSection />
     <AlliesSection />
