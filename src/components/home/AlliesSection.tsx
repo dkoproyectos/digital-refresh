@@ -1,7 +1,4 @@
-const allies = [
-  "Pentagrama", "Neolith", "Alfa", "Hunter Douglas",
-  "Solattu", "3M", "Solar Gard", "Llanogrande"
-];
+import { allies } from "@/lib/content/home";
 
 const AlliesSection = () => (
   <section className="py-16 bg-background border-t border-border">
@@ -10,12 +7,13 @@ const AlliesSection = () => (
         Nuestros Aliados Estratégicos
       </p>
       <div className="flex flex-wrap justify-center items-center gap-8 md:gap-14">
-        {allies.map((name) => (
+        {allies.map((ally) => (
           <span
-            key={name}
+            key={ally.name}
             className="text-lg md:text-xl font-display font-bold text-muted-foreground/40 hover:text-accent transition-colors cursor-default"
           >
-            {name}
+            {/* 🔌 Sanity: Reemplazar con <img src={ally.logo?.src} /> cuando haya logos */}
+            {ally.name}
           </span>
         ))}
       </div>
