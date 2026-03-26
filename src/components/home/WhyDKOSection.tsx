@@ -25,12 +25,15 @@ const WhyDKOSection = () => {
             {whyDkoPillars.map((p, i) => (
               <motion.div
                 key={p.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="p-5 bg-card border border-border rounded"
+                initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
+                transition={{ duration: 0.5, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                whileHover={{ y: -6, scale: 1.03, transition: { duration: 0.3, ease: [0.34, 1.56, 0.64, 1] } }}
+                className="p-5 bg-card border border-border rounded hover:shadow-xl hover:border-accent/30 transition-[box-shadow,border-color] duration-500 cursor-default"
               >
-                <p.icon size={20} className="text-accent mb-3" />
+                <motion.div whileHover={{ rotate: 360, transition: { duration: 0.6 } }}>
+                  <p.icon size={20} className="text-accent mb-3" />
+                </motion.div>
                 <h4 className="font-display text-lg font-bold text-foreground mb-1">{p.title}</h4>
                 <p className="text-xs text-muted-foreground font-body leading-relaxed">{p.text}</p>
               </motion.div>

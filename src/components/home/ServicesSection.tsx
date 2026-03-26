@@ -24,16 +24,21 @@ const ServicesSection = () => {
             <motion.a
               key={service.title}
               href={service.href}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group p-8 border border-border rounded bg-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+              transition={{ duration: 0.6, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
+              whileHover={{ y: -8, transition: { duration: 0.3, ease: [0.34, 1.56, 0.64, 1] } }}
+              className="group p-8 border border-border rounded bg-card hover:shadow-xl hover:border-accent/30 transition-[box-shadow,border-color] duration-500"
             >
-              <div className="w-12 h-12 rounded bg-muted flex items-center justify-center mb-5 group-hover:bg-accent transition-colors">
+              <motion.div
+                className="w-12 h-12 rounded bg-muted flex items-center justify-center mb-5 group-hover:bg-accent transition-colors duration-300"
+                whileHover={{ rotate: [0, -10, 10, 0], transition: { duration: 0.5 } }}
+              >
                 <service.icon size={22} className="text-accent group-hover:text-accent-foreground transition-colors" />
-              </div>
-              <h3 className="font-display text-xl font-bold text-foreground mb-3">{service.title}</h3>
+              </motion.div>
+              <h3 className="font-display text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">{service.title}</h3>
               <p className="text-sm text-muted-foreground font-body leading-relaxed">{service.description}</p>
+              <div className="mt-4 h-0.5 w-0 group-hover:w-full bg-gradient-to-r from-accent to-secondary transition-all duration-500 ease-out" />
             </motion.a>
           ))}
         </div>
