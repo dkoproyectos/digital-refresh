@@ -16,7 +16,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 11%;
 
-    --primary: 86 44% 25%; /* #4A5D23 verde corporativo */
+    --primary: 0 0% 20%; /* #333 gris oscuro — dominante para navbar, footer, hero */
     --primary-foreground: 0 0% 100%;
 
     --secondary: 33 18% 63%; /* #B5A48B dorado/arena */
@@ -25,7 +25,7 @@
     --muted: 30 10% 92%;
     --muted-foreground: 0 0% 40%;
 
-    --accent: 86 44% 25%; /* verde corporativo como acento */
+    --accent: 86 44% 25%; /* #4A5D23 verde corporativo — solo para botones y acentos */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 3 80% 41%;
@@ -47,7 +47,7 @@
     --cream: 0 0% 100%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 11%), hsl(0 0% 20%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 15%), hsl(0 0% 25%));
     --gradient-gold: linear-gradient(135deg, hsl(86 44% 25%), hsl(86 40% 35%));
 
     /* Shadows */
@@ -58,7 +58,7 @@
     /* Sidebar */
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 0 0% 20%;
-    --sidebar-primary: 86 44% 25%;
+    --sidebar-primary: 0 0% 20%;
     --sidebar-primary-foreground: 0 0% 98%;
     --sidebar-accent: 0 0% 95%;
     --sidebar-accent-foreground: 86 44% 25%;
