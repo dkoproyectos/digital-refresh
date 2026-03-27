@@ -6,64 +6,64 @@
 
 @layer base {
   :root {
-    /* Core palette - DKO brand (olive green) */
-    --background: 60 8% 96%; /* #F5F5F0 warm white */
-    --foreground: 80 20% 18%; /* #2E3321 dark olive */
+    /* Core palette — gris dominante con acentos verde oliva */
+    --background: 0 0% 96%; /* #F5F5F5 gris claro */
+    --foreground: 0 0% 15%; /* #262626 gris oscuro */
 
     --card: 0 0% 100%;
-    --card-foreground: 80 20% 18%;
+    --card-foreground: 0 0% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 80 20% 18%;
+    --popover-foreground: 0 0% 15%;
 
-    --primary: 59 32% 22%; /* deeper olive green - better contrast */
+    --primary: 0 0% 22%; /* #383838 gris oscuro — color dominante */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 55 40% 55%; /* warm golden olive - visible on dark AND light */
-    --secondary-foreground: 80 20% 12%;
+    --secondary: 80 30% 42%; /* verde oliva — acento */
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 60 8% 91%;
-    --muted-foreground: 80 8% 45%; /* #6B7360 */
+    --muted: 0 0% 91%; /* #E8E8E8 */
+    --muted-foreground: 0 0% 42%; /* #6B6B6B */
 
-    --accent: 45 30% 38%; /* richer warm olive accent - better contrast */
+    --accent: 80 25% 35%; /* verde oliva oscuro — acento secundario */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 3 80% 41%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 60 10% 88%; /* #E2E1D8 */
-    --input: 60 10% 88%;
-    --ring: 59 32% 32%;
+    --border: 0 0% 88%; /* #E0E0E0 */
+    --input: 0 0% 88%;
+    --ring: 0 0% 32%;
 
     --radius: 0.25rem;
 
     /* Extended tokens */
-    --gold: 59 32% 22%;
-    --bronze: 45 30% 38%;
-    --navy: 80 20% 14%; /* darker olive */
-    --navy-mid: 100 25% 18%;
-    --warm-gray: 80 8% 45%;
-    --warm-bg: 60 8% 96%;
+    --gold: 80 30% 42%;
+    --bronze: 80 25% 35%;
+    --navy: 0 0% 14%;
+    --navy-mid: 0 0% 18%;
+    --warm-gray: 0 0% 42%;
+    --warm-bg: 0 0% 96%;
     --cream: 0 0% 100%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(80 20% 18%), hsl(100 20% 24%));
-    --gradient-gold: linear-gradient(135deg, hsl(100 20% 30%), hsl(59 32% 32%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 15%), hsl(0 0% 25%));
+    --gradient-gold: linear-gradient(135deg, hsl(80 25% 35%), hsl(80 30% 45%));
 
     /* Shadows */
-    --shadow-card: 0 4px 24px -4px hsl(80 20% 18% / 0.08);
-    --shadow-elevated: 0 12px 40px -8px hsl(80 20% 18% / 0.12);
-    --shadow-gold: 0 8px 24px -4px hsl(59 32% 32% / 0.3);
+    --shadow-card: 0 4px 24px -4px hsl(0 0% 15% / 0.08);
+    --shadow-elevated: 0 12px 40px -8px hsl(0 0% 15% / 0.12);
+    --shadow-gold: 0 8px 24px -4px hsl(80 30% 42% / 0.3);
 
     /* Sidebar */
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 80 10% 26%;
-    --sidebar-primary: 80 20% 18%;
+    --sidebar-foreground: 0 0% 26%;
+    --sidebar-primary: 0 0% 18%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 60 8% 95%;
-    --sidebar-accent-foreground: 80 20% 18%;
-    --sidebar-border: 60 10% 91%;
-    --sidebar-ring: 59 32% 32%;
+    --sidebar-accent: 0 0% 95%;
+    --sidebar-accent-foreground: 0 0% 18%;
+    --sidebar-border: 0 0% 91%;
+    --sidebar-ring: 0 0% 32%;
   }
 }
 

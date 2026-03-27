@@ -2,10 +2,13 @@ import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
 import { motion } from "framer-motion";
-import { CheckCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { hogarVisContent } from "@/lib/content/services";
+import { hogarVisStyles } from "@/lib/content/services/hogar-vis-styles";
 
 const c = hogarVisContent;
+const styleSlugs = Object.keys(hogarVisStyles);
 
 const HogarVis = () => (
   <PageLayout>
@@ -18,44 +21,40 @@ const HogarVis = () => (
       </section>
     )}
 
+    {/* Catálogo de estilos */}
     <section className="py-20 bg-background">
-      <div className="container grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <p className="section-label">¿En qué consiste?</p>
-          <h2 className="section-title">{c.intro.title} <span>{c.intro.titleHighlight}</span></h2>
-          <p className="text-muted-foreground font-body leading-relaxed mb-6">{c.intro.description}</p>
-          <div className="grid grid-cols-2 gap-3">
-            {c.intro.features.map((b) => (
-              <div key={b} className="flex items-center gap-2">
-                <CheckCircle size={16} className="text-secondary flex-shrink-0" />
-                <span className="text-sm font-body text-foreground">{b}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-        <img src={c.intro.image.src} alt={c.intro.image.alt} className="w-full h-[400px] object-cover rounded-sm" />
-      </div>
-    </section>
-
-    <section className="py-20 bg-muted/30">
       <div className="container">
-        <p className="section-label">¿Cómo trabajamos?</p>
-        <h2 className="section-title">Proceso <span>simplificado</span></h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {c.process.map((p, i) => (
-            <motion.div key={p.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="text-center">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-secondary/10 border border-secondary/30 flex items-center justify-center">
-                <p.icon size={24} className="text-secondary" />
-              </div>
-              <h3 className="font-display text-xl font-bold text-primary mb-2">{p.title}</h3>
-              <p className="text-muted-foreground text-sm font-body leading-relaxed">{p.description}</p>
-            </motion.div>
-          ))}
+        <p className="section-label">Elige tu estilo</p>
+        <h2 className="section-title">Nuestros estilos <span>VIS</span></h2>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {styleSlugs.map((slug, i) => {
+            const s = hogarVisStyles[slug];
+            return (
+              <motion.div key={slug} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}>
+                <Link
+                  to={`/servicios/hogar-vis/${slug}`}
+                  className="block bg-card p-6 border border-border hover:border-secondary/30 hover:shadow-md transition-all group"
+                >
+                  {s.heroImage && (
+                    <div className="overflow-hidden rounded-sm mb-4 h-[220px]">
+                      <img src={s.heroImage.src} alt={s.heroImage.alt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                    </div>
+                  )}
+                  <h3 className="font-display text-xl font-bold text-primary mb-2">{s.title} {s.highlight}</h3>
+                  <p className="text-muted-foreground font-body text-sm leading-relaxed mb-3">{s.description}</p>
+                  <span className="inline-flex items-center gap-1 text-secondary text-xs font-body font-semibold uppercase tracking-wider group-hover:gap-2 transition-all">
+                    Ver estilo <ArrowRight size={14} />
+                  </span>
+                </Link>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
 
-    <section className="py-20 bg-background">
+    {/* Contact form */}
+    <section className="py-20 bg-muted/30">
       <div className="container max-w-2xl text-center">
         <p className="section-label">Cotiza tu proyecto</p>
         <h2 className="section-title">Transforma tu hogar <span>VIS</span></h2>
