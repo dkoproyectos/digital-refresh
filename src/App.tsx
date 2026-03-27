@@ -12,6 +12,7 @@ const Nosotros = lazy(() => import("./pages/Nosotros"));
 const Servicios = lazy(() => import("./pages/Servicios"));
 const DisenoPremium = lazy(() => import("./pages/servicios/DisenoPremium"));
 const HogarVis = lazy(() => import("./pages/servicios/HogarVis"));
+const HogarVisStyle = lazy(() => import("./pages/servicios/hogar-vis/[slug]"));
 const RentasCortas = lazy(() => import("./pages/servicios/RentasCortas"));
 const Ventas = lazy(() => import("./pages/Ventas"));
 const Recubrimiento = lazy(() => import("./pages/ventas/Recubrimiento"));
@@ -26,6 +27,7 @@ const RecubrimientoProduct = lazy(() => import("./pages/ventas/recubrimiento/[sl
 const PeliculasProduct = lazy(() => import("./pages/ventas/peliculas-solares/[slug]"));
 const CortinasProduct = lazy(() => import("./pages/ventas/cortinas-persianas/[slug]"));
 const MobiliarioProduct = lazy(() => import("./pages/ventas/mobiliario-exterior/[slug]"));
+const MobiliarioSubProduct = lazy(() => import("./pages/ventas/mobiliario-exterior/[slug]/[subSlug]"));
 
 const queryClient = new QueryClient();
 
@@ -42,6 +44,7 @@ const App = () => (
             <Route path="/servicios" element={<Servicios />} />
             <Route path="/servicios/diseno-premium" element={<DisenoPremium />} />
             <Route path="/servicios/hogar-vis" element={<HogarVis />} />
+            <Route path="/servicios/hogar-vis/:slug" element={<HogarVisStyle />} />
             <Route path="/servicios/rentas-cortas" element={<RentasCortas />} />
             <Route path="/ventas" element={<Ventas />} />
             <Route path="/ventas/recubrimiento" element={<Recubrimiento />} />
@@ -52,6 +55,7 @@ const App = () => (
             <Route path="/ventas/cortinas-persianas/:slug" element={<CortinasProduct />} />
             <Route path="/ventas/mobiliario-exterior" element={<MobiliarioExterior />} />
             <Route path="/ventas/mobiliario-exterior/:slug" element={<MobiliarioProduct />} />
+            <Route path="/ventas/mobiliario-exterior/:slug/:subSlug" element={<MobiliarioSubProduct />} />
             <Route path="/proyectos" element={<Proyectos />} />
             <Route path="/contacto" element={<Contacto />} />
             <Route path="*" element={<NotFound />} />
