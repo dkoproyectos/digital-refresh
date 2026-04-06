@@ -246,30 +246,44 @@ const ContactForm = ({
 
       {/* SALES: Producto + Medidas */}
       {variant === "sales" && (
-        <div className="grid sm:grid-cols-2 gap-4">
-          {productOptions.length > 0 ? (
-            <select
-              value={form.producto}
-              onChange={(e) => update("producto", e.target.value)}
-              className={selectClass}
-            >
-              <option value="">Producto de interés</option>
-              {productOptions.map((p) =>
-                p.startsWith("──") ? (
-                  <option key={p} disabled className="font-bold text-muted-foreground">{p}</option>
-                ) : (
-                  <option key={p} value={p}>{p}</option>
-                )
-              )}
-            </select>
-          ) : (
-            <input
-              placeholder="Producto de interés"
-              value={form.producto}
-              onChange={(e) => update("producto", e.target.value)}
-              className={inputClass}
-            />
-          )}
+        <div className="space-y-4">
+          <div className="grid sm:grid-cols-2 gap-4">
+            {productOptions.length > 0 ? (
+              <select
+                value={form.producto}
+                onChange={(e) => update("producto", e.target.value)}
+                className={selectClass}
+              >
+                <option value="">Servicio o producto de interés *</option>
+                {productOptions.map((p) =>
+                  p.startsWith("──") ? (
+                    <option key={p} disabled className="font-bold text-muted-foreground">{p}</option>
+                  ) : (
+                    <option key={p} value={p}>{p}</option>
+                  )
+                )}
+              </select>
+            ) : (
+              <input
+                placeholder="Producto de interés"
+                value={form.producto}
+                onChange={(e) => update("producto", e.target.value)}
+                className={inputClass}
+              />
+            )}
+            {currentSubOptions.length > 0 && (
+              <select
+                value={form.subProducto}
+                onChange={(e) => update("subProducto", e.target.value)}
+                className={selectClass}
+              >
+                <option value="">Selecciona una opción</option>
+                {currentSubOptions.map((s) => (
+                  <option key={s} value={s}>{s}</option>
+                ))}
+              </select>
+            )}
+          </div>
           <input
             placeholder="Medidas aproximadas (ej: 2m x 3m)"
             value={form.medidas}
