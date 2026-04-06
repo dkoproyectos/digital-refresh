@@ -245,9 +245,13 @@ const ContactForm = ({
               className={selectClass}
             >
               <option value="">Producto de interés</option>
-              {productOptions.map((p) => (
-                <option key={p} value={p}>{p}</option>
-              ))}
+              {productOptions.map((p) =>
+                p.startsWith("──") ? (
+                  <option key={p} disabled className="font-bold text-muted-foreground">{p}</option>
+                ) : (
+                  <option key={p} value={p}>{p}</option>
+                )
+              )}
             </select>
           ) : (
             <input
