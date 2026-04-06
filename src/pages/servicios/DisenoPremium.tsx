@@ -16,18 +16,18 @@ const DisenoPremium = () => {
     <PageLayout>
       <PageHero {...c.hero} />
 
-      {/* Botón flotante de cotizar */}
-      <div className="fixed bottom-24 right-6 z-40">
-        <button onClick={() => setQuoteOpen(true)} className="btn-gold text-xs py-3 px-6 shadow-xl glow-pulse">
-          Cotizar Ahora
-        </button>
-      </div>
       <QuoteModal open={quoteOpen} onOpenChange={setQuoteOpen} context={c.formContext} />
 
     {c.hero.bannerImage && (
       <section className="relative h-[40vh] min-h-[300px]">
         <img src={c.hero.bannerImage.src} alt={c.hero.bannerImage.alt} className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-primary/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/30 to-primary/10" />
+        {/* Big CTA on banner */}
+        <div className="absolute bottom-8 left-0 right-0 flex justify-center">
+          <button onClick={() => setQuoteOpen(true)} className="btn-gold text-base px-12 py-4 tracking-[3px] shadow-2xl">
+            Cotizar Ahora
+          </button>
+        </div>
       </section>
     )}
 
