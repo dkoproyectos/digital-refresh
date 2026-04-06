@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { getWhatsAppUrl, siteConfig } from "@/lib/config";
+import { siteConfig } from "@/lib/config";
+import QuoteModal from "@/components/QuoteModal";
 
 const services = [
   { label: "Diseño de Interior Premium", href: "/servicios/diseno-premium" },
@@ -17,9 +18,17 @@ const ventas = [
   { label: "Mobiliario Exterior", href: "/ventas/mobiliario-exterior" },
 ];
 
+const allOptions = [
+  "── Servicios ──",
+  ...services.map((s) => s.label),
+  "── Productos ──",
+  ...ventas.map((v) => v.label),
+];
+
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [quoteOpen, setQuoteOpen] = useState(false);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-md border-b border-gold/10">
@@ -38,9 +47,9 @@ const Navbar = () => {
           <NavItem href="/contacto" label="Contacto" />
         </div>
 
-        <a href="#cotizar" className="hidden lg:inline-flex btn-gold text-xs py-2 px-6 glow-pulse">
+        <button onClick={() => setQuoteOpen(true)} className="hidden lg:inline-flex btn-gold text-xs py-2 px-6 glow-pulse">
           Cotiza Gratis
-        </a>
+        </button>
 
         <button className="lg:hidden text-primary-foreground" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menu">
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -57,13 +66,19 @@ const Navbar = () => {
               <MobileDropdown label="Ventas" items={ventas} onItemClick={() => setMobileOpen(false)} />
               <MobileLink href="/proyectos" label="Proyectos" onClick={() => setMobileOpen(false)} />
               <MobileLink href="/contacto" label="Contacto" onClick={() => setMobileOpen(false)} />
-              <a href="#cotizar" onClick={() => setMobileOpen(false)} className="btn-gold text-xs py-3 text-center mt-2">
+              <button onClick={() => { setMobileOpen(false); setQuoteOpen(true); }} className="btn-gold text-xs py-3 text-center mt-2">
                 Cotiza Gratis
-              </a>
+              </button>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
+      <QuoteModal
+        open={quoteOpen}
+        onOpenChange={setQuoteOpen}
+        context="Cotización general"
+        productOptions={allOptions}
+      />
     </nav>
   );
 };
