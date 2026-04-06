@@ -93,7 +93,12 @@ export const homeSaleCategories: SaleCategory[] = [
     description: "Paneles decorativos, enchapes y soluciones de revestimiento para transformar cualquier superficie con estilo y durabilidad.",
     image: { src: ventaRecubrimiento, alt: "Recubrimiento de paredes" },
     href: "/ventas/recubrimiento",
-    products: ["Paneles 3D decorativos", "Enchape de piedra natural", "Revestimiento PVC", "Papel tapiz premium"],
+    products: [
+      { name: "Paneles 3D decorativos", href: "/ventas/recubrimiento/paneles-3d" },
+      { name: "Enchape de piedra natural", href: "/ventas/recubrimiento/piedra-decorativa" },
+      { name: "Papel tapiz premium", href: "/ventas/recubrimiento/papel-tapiz" },
+      { name: "Microcemento", href: "/ventas/recubrimiento/microcemento" },
+    ],
   },
   {
     id: "peliculas",
@@ -102,7 +107,12 @@ export const homeSaleCategories: SaleCategory[] = [
     description: "Películas de alta tecnología para ventanas que reducen el calor, bloquean rayos UV y mejoran la eficiencia energética.",
     image: { src: ventaPeliculas, alt: "Películas de protección solar" },
     href: "/ventas/peliculas-solares",
-    products: ["Película espejada", "Control solar residencial", "Seguridad anti-impacto", "Decorativa esmerilada"],
+    products: [
+      { name: "Control solar", href: "/ventas/peliculas-solares/control-solar" },
+      { name: "Privacidad", href: "/ventas/peliculas-solares/privacidad" },
+      { name: "Seguridad anti-impacto", href: "/ventas/peliculas-solares/seguridad" },
+      { name: "Decorativa esmerilada", href: "/ventas/peliculas-solares/decorativa" },
+    ],
   },
   {
     id: "cortinas",
@@ -111,7 +121,12 @@ export const homeSaleCategories: SaleCategory[] = [
     description: "Soluciones a medida con las mejores marcas para controlar la luz, la temperatura y la privacidad de tus espacios.",
     image: { src: ventaCortinas, alt: "Cortinas y persianas" },
     href: "/ventas/cortinas-persianas",
-    products: ["Cortinas roller", "Persianas de madera", "Toldos retráctiles", "Cortinas blackout"],
+    products: [
+      { name: "Cortinas roller", href: "/ventas/cortinas-persianas/roller" },
+      { name: "Cortinas blackout", href: "/ventas/cortinas-persianas/blackout" },
+      { name: "Persianas de madera", href: "/ventas/cortinas-persianas/persianas-madera" },
+      { name: "Toldos retráctiles", href: "/ventas/cortinas-persianas/toldos" },
+    ],
   },
   {
     id: "mobiliario",
@@ -120,7 +135,12 @@ export const homeSaleCategories: SaleCategory[] = [
     description: "Mobiliario resistente a la intemperie con diseño elegante para terrazas, jardines, piscinas y zonas sociales al aire libre.",
     image: { src: ventaMobiliario, alt: "Mobiliario exterior" },
     href: "/ventas/mobiliario-exterior",
-    products: ["Sofás de ratán sintético", "Mesas de aluminio", "Sombrillas premium", "Sets lounge exterior"],
+    products: [
+      { name: "Salas de exterior", href: "/ventas/mobiliario-exterior/salas-exterior" },
+      { name: "Comedores de terraza", href: "/ventas/mobiliario-exterior/comedores-terraza" },
+      { name: "Sombrillas premium", href: "/ventas/mobiliario-exterior/sombrillas" },
+      { name: "Camastros", href: "/ventas/mobiliario-exterior/camastros" },
+    ],
   },
 ];
 

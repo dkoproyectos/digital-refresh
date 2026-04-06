@@ -84,10 +84,21 @@ const VentasSection = () => {
               <p className="text-[10px] font-semibold uppercase tracking-[3px] text-accent mb-4">Productos destacados</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {active.products.map((product) => (
-                  <div key={product} className="flex items-center gap-3 p-3 rounded border border-border bg-muted/30 hover:bg-muted/60 transition-colors">
-                    <ShoppingBag size={14} className="text-accent shrink-0" />
-                    <span className="text-sm font-body text-foreground">{product}</span>
-                  </div>
+                  product.href ? (
+                    <Link
+                      key={product.name}
+                      to={product.href}
+                      className="flex items-center gap-3 p-3 rounded border border-border bg-muted/30 hover:bg-secondary/10 hover:border-secondary/40 transition-colors group/prod"
+                    >
+                      <ShoppingBag size={14} className="text-accent shrink-0 group-hover/prod:text-secondary transition-colors" />
+                      <span className="text-sm font-body text-foreground group-hover/prod:text-secondary transition-colors">{product.name}</span>
+                    </Link>
+                  ) : (
+                    <div key={product.name} className="flex items-center gap-3 p-3 rounded border border-border bg-muted/30">
+                      <ShoppingBag size={14} className="text-accent shrink-0" />
+                      <span className="text-sm font-body text-foreground">{product.name}</span>
+                    </div>
+                  )
                 ))}
               </div>
             </div>

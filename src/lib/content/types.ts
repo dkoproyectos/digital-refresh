@@ -40,6 +40,12 @@ export interface PillarItem {
   text: string;
 }
 
+/** Producto destacado en home */
+export interface SaleCategoryProduct {
+  name: string;
+  href?: string;
+}
+
 /** Categoría de venta */
 export interface SaleCategory {
   id: string;
@@ -48,7 +54,7 @@ export interface SaleCategory {
   description: string;
   image: CMSImage;
   href: string;
-  products: string[];
+  products: SaleCategoryProduct[];
 }
 
 /** Proyecto del portafolio */
