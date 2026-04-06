@@ -89,7 +89,7 @@
 
   .section-title {
     font-family: 'Cormorant Garamond', serif;
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight mb-8;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-8;
   }
 
   .section-title span {
