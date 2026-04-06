@@ -25,6 +25,15 @@ const allOptions = [
   ...ventas.map((v) => v.label),
 ];
 
+/** Sub-opciones por categoría seleccionada */
+const subOptionsMap: Record<string, string[]> = {
+  "Tu Hogar VIS": ["Estilo Moderno", "Estilo Minimalista", "Estilo Industrial"],
+  "Cortinas, Persianas y Toldos": ["Cortinas Roller", "Cortinas Blackout", "Sheer Elegance", "Persianas de Madera", "Persianas de Aluminio", "Toldos"],
+  "Películas de Protección Solar": ["Control Solar", "Privacidad", "Seguridad", "Decorativa"],
+  "Recubrimiento de Paredes": ["Paneles 3D", "Papel Tapiz", "Piedra Decorativa", "Enchapes Cerámicos", "Madera Decorativa", "Microcemento"],
+  "Mobiliario Exterior": ["Salas de Exterior", "Comedores de Terraza", "Camastros", "Sombrillas", "Macetas", "Accesorios"],
+};
+
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -78,6 +87,7 @@ const Navbar = () => {
         onOpenChange={setQuoteOpen}
         context="Cotización general"
         productOptions={allOptions}
+        subOptionsMap={subOptionsMap}
       />
     </nav>
   );
