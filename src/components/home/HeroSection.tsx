@@ -44,7 +44,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.15 }}
-              className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-7xl font-bold text-card leading-[1.05]"
+              className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-7xl font-bold text-white/90 leading-[1.05]"
             >
               {titleLine1}{" "}
               <span className="relative inline-block">
@@ -64,7 +64,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="mt-6 text-card/60 font-body text-base md:text-lg max-w-md leading-relaxed"
+              className="mt-6 text-white/50 font-body text-base md:text-lg max-w-md leading-relaxed"
             >
               {description}
             </motion.p>
