@@ -33,7 +33,7 @@ const ServicesSection = () => {
                   Nuestros Servicios
                 </span>
               </div>
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-card leading-[1.1]">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-white leading-[1.1]">
                 Soluciones integrales para{" "}
                 <span className="relative inline-block">
                   <span className="relative z-10 text-secondary">transformar</span>
@@ -52,7 +52,7 @@ const ServicesSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-card/50 font-body text-base md:text-lg leading-relaxed lg:text-right max-w-md lg:ml-auto"
+              className="text-white/70 font-body text-base md:text-lg leading-relaxed lg:text-right max-w-md lg:ml-auto"
             >
               En DKO creamos soluciones que combinan innovación, calidad y diseño. Gestionamos cada proyecto con precisión.
             </motion.p>
@@ -134,7 +134,7 @@ const ServicesSection = () => {
 
                       {/* Title */}
                       <motion.h3
-                        className="font-display text-2xl md:text-3xl font-bold text-card mb-3"
+                        className="font-display text-2xl md:text-3xl font-bold text-white mb-3"
                         animate={{ y: isHovered ? -4 : 0 }}
                         transition={{ duration: 0.4, delay: 0.05 }}
                       >
@@ -143,7 +143,7 @@ const ServicesSection = () => {
 
                       {/* Description — slides up on hover */}
                       <motion.p
-                        className="text-sm text-card/60 font-body leading-relaxed max-w-xs"
+                        className="text-sm text-white/70 font-body leading-relaxed max-w-xs"
                         animate={{ 
                           opacity: isHovered ? 1 : 0.6,
                           y: isHovered ? -4 : 0
