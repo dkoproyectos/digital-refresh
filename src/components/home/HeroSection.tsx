@@ -44,7 +44,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.15 }}
-              className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-7xl font-bold text-white/90 leading-[1.05]"
+              className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-7xl font-bold text-white leading-[1.05]"
             >
               {titleLine1}{" "}
               <span className="relative inline-block">
@@ -64,7 +64,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="mt-6 text-white/50 font-body text-base md:text-lg max-w-md leading-relaxed"
+              className="mt-6 text-white/75 font-body text-base md:text-lg max-w-md leading-relaxed"
             >
               {description}
             </motion.p>
@@ -89,7 +89,7 @@ const HeroSection = () => {
               {heroStats.map((s) => (
                 <div key={s.label} className="flex flex-col">
                   <span className="font-display text-3xl md:text-4xl font-bold text-secondary">{s.value}</span>
-                  <span className="text-[11px] font-body uppercase tracking-[2px] text-card/40 mt-1">{s.label}</span>
+                  <span className="text-[11px] font-body uppercase tracking-[2px] text-white/50 mt-1">{s.label}</span>
                 </div>
               ))}
             </motion.div>
@@ -127,7 +127,7 @@ const HeroSection = () => {
         transition={{ delay: 1.2 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span className="text-[10px] font-body uppercase tracking-[3px] text-card/30">Scroll</span>
+        <span className="text-[10px] font-body uppercase tracking-[3px] text-white/40">Scroll</span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
