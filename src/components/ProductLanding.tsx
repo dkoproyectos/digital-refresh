@@ -21,6 +21,7 @@ import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
 import QuoteModal from "@/components/QuoteModal";
+import FAQSection from "@/components/FAQSection";
 
 export interface ProductLandingData {
   /** Hero */
@@ -223,31 +224,7 @@ const ProductLanding = ({ data }: ProductLandingProps) => {
       )}
 
       {/* FAQ */}
-      {d.faqs.length > 0 && (
-        <section className="py-20 bg-muted/30">
-          <div className="container max-w-2xl">
-            <p className="section-label">Preguntas Frecuentes</p>
-            <h2 className="section-title">
-              Resolvemos tus <span>dudas</span>
-            </h2>
-            <div className="space-y-4">
-              {d.faqs.map((faq) => (
-                <div
-                  key={faq.question}
-                  className="bg-card p-6 border border-border"
-                >
-                  <h3 className="font-display text-lg font-bold text-foreground mb-2">
-                    {faq.question}
-                  </h3>
-                  <p className="text-muted-foreground font-body text-sm leading-relaxed">
-                    {faq.answer}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+      <FAQSection faqs={d.faqs} />
 
       {/* CTA Form */}
       <section id="cotizar-producto" className="py-20 bg-background">
