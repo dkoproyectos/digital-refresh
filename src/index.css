@@ -16,7 +16,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 11%;
 
-    --primary: 30 3% 52%; /* #8A8580 gris cálido como la página DKO antigua */
+    --primary: 30 3% 62%; /* Gris cálido suave — más fiel a la página DKO antigua */
     --primary-foreground: 0 0% 100%;
 
     --secondary: 33 18% 63%; /* #B5A48B dorado/arena */
@@ -40,8 +40,8 @@
     /* Extended tokens */
     --gold: 33 18% 63%; /* #B5A48B dorado/arena */
     --bronze: 33 18% 50%;
-    --navy: 0 0% 11%; /* #1C1C1C */
-    --navy-mid: 0 0% 16%;
+    --navy: 0 0% 20%;
+    --navy-mid: 0 0% 28%;
     --warm-gray: 0 0% 40%;
     --warm-bg: 0 0% 97.6%;
     --cream: 0 0% 100%;
