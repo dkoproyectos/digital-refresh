@@ -36,7 +36,6 @@ const VentasSection = () => {
           </p>
         </motion.div>
 
-        {/* Category tabs */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">
           {homeSaleCategories.map((cat, i) => (
             <button
@@ -53,7 +52,6 @@ const VentasSection = () => {
           ))}
         </div>
 
-        {/* Featured category */}
         <motion.div
           key={active.id}
           initial={{ opacity: 0, y: 20 }}
@@ -63,17 +61,17 @@ const VentasSection = () => {
         >
           <div className="relative h-72 lg:h-[480px] overflow-hidden">
             <img src={active.image.src} alt={active.image.alt} loading="lazy" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-foreground/55 via-transparent to-transparent" />
             <div className="absolute bottom-6 left-6">
               <span className="inline-block px-3 py-1 rounded text-[10px] font-semibold uppercase tracking-wider bg-secondary text-secondary-foreground">
                 {active.subtitle}
               </span>
             </div>
             <div className="absolute top-1/2 -translate-y-1/2 left-4 right-4 flex justify-between pointer-events-none">
-              <button onClick={() => scrollTo("prev")} className="pointer-events-auto w-10 h-10 rounded-full bg-primary/70 backdrop-blur-sm flex items-center justify-center text-primary-foreground hover:bg-secondary hover:text-secondary-foreground transition-colors">
+              <button onClick={() => scrollTo("prev")} className="pointer-events-auto w-10 h-10 rounded-full bg-foreground/65 backdrop-blur-sm flex items-center justify-center text-white hover:bg-secondary hover:text-secondary-foreground transition-colors">
                 <ArrowLeft size={18} />
               </button>
-              <button onClick={() => scrollTo("next")} className="pointer-events-auto w-10 h-10 rounded-full bg-primary/70 backdrop-blur-sm flex items-center justify-center text-primary-foreground hover:bg-secondary hover:text-secondary-foreground transition-colors">
+              <button onClick={() => scrollTo("next")} className="pointer-events-auto w-10 h-10 rounded-full bg-foreground/65 backdrop-blur-sm flex items-center justify-center text-white hover:bg-secondary hover:text-secondary-foreground transition-colors">
                 <ArrowRight size={18} />
               </button>
             </div>
@@ -97,7 +95,6 @@ const VentasSection = () => {
           </div>
         </motion.div>
 
-        {/* Indicators */}
         <div className="flex justify-center gap-2 mt-8">
           {homeSaleCategories.map((_, i) => (
             <button
