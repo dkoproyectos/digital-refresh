@@ -24,13 +24,11 @@ export interface FormData {
   email: string;
   celular: string;
   mensaje: string;
-  // General
   tipoProyecto?: string;
-  // Service
   tipoEspacio?: string;
   presupuesto?: string;
-  // Sales
   producto?: string;
+  subProducto?: string;
   medidas?: string;
 }
 
@@ -43,7 +41,8 @@ interface ContactFormProps {
   projectTypes?: string[];
   /** Opciones para el select de producto (variant=sales) */
   productOptions?: string[];
-  /** Callback opcional cuando se envía el form (para analytics, CRM, etc.) */
+  /** Sub-opciones dinámicas por producto seleccionado */
+  subOptionsMap?: Record<string, string[]>;
   onFormSubmit?: (data: FormData) => void;
 }
 
@@ -78,6 +77,7 @@ const ContactForm = ({
   variant = "general",
   projectTypes = defaultProjectTypes,
   productOptions = [],
+  subOptionsMap = {},
   onFormSubmit,
 }: ContactFormProps) => {
   const [form, setForm] = useState<FormData>({
@@ -89,12 +89,20 @@ const ContactForm = ({
     tipoEspacio: "",
     presupuesto: "",
     producto: "",
+    subProducto: "",
     medidas: "",
   });
   const [sending, setSending] = useState(false);
 
   const update = (field: keyof FormData, value: string) =>
-    setForm((prev) => ({ ...prev, [field]: value }));
+    setForm((prev) => ({
+      ...prev,
+      [field]: value,
+      // Reset sub-product when main product changes
+      ...(field === "producto" ? { subProducto: "" } : {}),
+    }));
+
+  const currentSubOptions = form.producto ? subOptionsMap[form.producto] || [] : [];
 
   const buildWhatsAppMessage = (): string => {
     const parts = [`Hola DKO, soy ${form.nombre}.`];
