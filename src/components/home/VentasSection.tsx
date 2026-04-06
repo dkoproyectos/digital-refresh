@@ -31,7 +31,7 @@ const VentasSection = () => {
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground leading-tight mb-4">
             Nuestras líneas de <span className="text-secondary">venta</span>
           </h2>
-          <p className="text-primary-foreground/60 font-body text-base">
+          <p className="text-primary-foreground/80 font-body text-base">
             Productos de alta calidad para complementar y transformar tus espacios.
           </p>
         </motion.div>
@@ -45,7 +45,7 @@ const VentasSection = () => {
               className={`px-5 py-2.5 rounded text-xs font-body font-semibold uppercase tracking-wider transition-all duration-300 border ${
                 activeIndex === i
                   ? "bg-secondary text-secondary-foreground border-secondary shadow-lg"
-                  : "bg-transparent text-primary-foreground/50 border-primary-foreground/20 hover:border-secondary hover:text-secondary"
+                  : "bg-transparent text-primary-foreground/70 border-primary-foreground/30 hover:border-secondary hover:text-secondary"
               }`}
             >
               {cat.title.length > 20 ? cat.title.split(" ").slice(0, 2).join(" ") : cat.title}

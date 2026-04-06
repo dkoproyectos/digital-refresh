@@ -26,7 +26,7 @@ const Navbar = () => {
       <div className="container flex items-center justify-between h-20">
         <Link to="/" className="flex items-center gap-2">
           <span className="font-display text-2xl font-bold text-secondary tracking-wide">{siteConfig.shortName}</span>
-          <span className="text-primary-foreground/60 text-xs font-body uppercase tracking-[3px] hidden sm:block">Proyectos</span>
+          <span className="text-primary-foreground/80 text-xs font-body uppercase tracking-[3px] hidden sm:block">Proyectos</span>
         </Link>
 
         <div className="hidden lg:flex items-center gap-8">
@@ -69,12 +69,12 @@ const Navbar = () => {
 };
 
 const NavItem = ({ href, label }: { href: string; label: string }) => (
-  <Link to={href} className="nav-link-animated text-primary-foreground/70 hover:text-secondary transition-colors text-sm font-body font-medium uppercase tracking-wider">{label}</Link>
+  <Link to={href} className="nav-link-animated text-primary-foreground/90 hover:text-secondary transition-colors text-sm font-body font-medium uppercase tracking-wider">{label}</Link>
 );
 
 const DropdownNav = ({ label, items, open, onToggle, onClose }: { label: string; items: { label: string; href: string }[]; open: boolean; onToggle: () => void; onClose: () => void }) => (
   <div className="relative" onMouseEnter={onToggle} onMouseLeave={onClose}>
-    <button className="flex items-center gap-1 text-primary-foreground/70 hover:text-secondary transition-colors text-sm font-body font-medium uppercase tracking-wider">
+    <button className="flex items-center gap-1 text-primary-foreground/90 hover:text-secondary transition-colors text-sm font-body font-medium uppercase tracking-wider">
       {label} <ChevronDown size={14} className={`transition-transform ${open ? "rotate-180" : ""}`} />
     </button>
     <AnimatePresence>
@@ -90,20 +90,20 @@ const DropdownNav = ({ label, items, open, onToggle, onClose }: { label: string;
 );
 
 const MobileLink = ({ href, label, onClick }: { href: string; label: string; onClick: () => void }) => (
-  <Link to={href} onClick={onClick} className="text-primary-foreground/80 hover:text-secondary text-base font-body font-medium uppercase tracking-wider py-1">{label}</Link>
+  <Link to={href} onClick={onClick} className="text-primary-foreground/90 hover:text-secondary text-base font-body font-medium uppercase tracking-wider py-1">{label}</Link>
 );
 
 const MobileDropdown = ({ label, items, onItemClick }: { label: string; items: { label: string; href: string }[]; onItemClick: () => void }) => {
   const [open, setOpen] = useState(false);
   return (
     <div>
-      <button onClick={() => setOpen(!open)} className="flex items-center gap-2 text-primary-foreground/80 hover:text-secondary text-base font-body font-medium uppercase tracking-wider py-1 w-full">
+      <button onClick={() => setOpen(!open)} className="flex items-center gap-2 text-primary-foreground/90 hover:text-secondary text-base font-body font-medium uppercase tracking-wider py-1 w-full">
         {label} <ChevronDown size={16} className={`transition-transform ${open ? "rotate-180" : ""}`} />
       </button>
       {open && (
         <div className="pl-4 mt-2 flex flex-col gap-2 border-l-2 border-gold/30">
           {items.map((item) => (
-            <Link key={item.href} to={item.href} onClick={onItemClick} className="text-primary-foreground/60 hover:text-secondary text-sm font-body py-1">{item.label}</Link>
+            <Link key={item.href} to={item.href} onClick={onItemClick} className="text-primary-foreground/80 hover:text-secondary text-sm font-body py-1">{item.label}</Link>
           ))}
         </div>
       )}

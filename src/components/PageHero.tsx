@@ -33,7 +33,7 @@ const PageHero = ({ label, title, highlight, description }: PageHeroProps) => (
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
-        className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-card leading-tight max-w-3xl"
+        className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight max-w-3xl"
       >
         {title}{" "}
         {highlight && <span className="text-secondary">{highlight}</span>}
@@ -43,7 +43,7 @@ const PageHero = ({ label, title, highlight, description }: PageHeroProps) => (
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="mt-4 text-card/60 font-body text-base md:text-lg max-w-xl leading-relaxed"
+          className="mt-4 text-white/75 font-body text-base md:text-lg max-w-xl leading-relaxed"
         >
           {description}
         </motion.p>
