@@ -2,6 +2,7 @@ import { useState } from "react";
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
+import FAQSection from "@/components/FAQSection";
 import QuoteModal from "@/components/QuoteModal";
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
@@ -94,22 +95,7 @@ const DisenoPremium = () => {
       </section>
     )}
 
-    {c.faqs.length > 0 && (
-      <section className="py-20 bg-muted/30">
-        <div className="container max-w-2xl">
-          <p className="section-label">Preguntas Frecuentes</p>
-          <h2 className="section-title">Resolvemos tus <span>dudas</span></h2>
-          <div className="space-y-6">
-            {c.faqs.map((faq) => (
-              <div key={faq.question} className="bg-card p-6 border border-border">
-                <h3 className="font-display text-lg font-bold text-foreground mb-2">{faq.question}</h3>
-                <p className="text-muted-foreground font-body text-sm leading-relaxed">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    )}
+    <FAQSection faqs={c.faqs} />
 
     <section className="py-20 bg-background">
       <div className="container max-w-2xl text-center">
