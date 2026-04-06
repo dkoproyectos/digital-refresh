@@ -28,12 +28,10 @@ import {
 interface QuoteModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  /** Contexto para WhatsApp/CRM */
   context?: string;
-  /** Nombre del producto para pre-seleccionar */
   productName?: string;
-  /** Opciones de producto para el select */
   productOptions?: string[];
+  subOptionsMap?: Record<string, string[]>;
 }
 
 const QuoteModal = ({
@@ -42,6 +40,7 @@ const QuoteModal = ({
   context,
   productName,
   productOptions,
+  subOptionsMap,
 }: QuoteModalProps) => {
   const isMobile = useIsMobile();
 
@@ -51,6 +50,7 @@ const QuoteModal = ({
         context={context}
         variant="sales"
         productOptions={productOptions || (productName ? [productName] : [])}
+        subOptionsMap={subOptionsMap}
         onFormSubmit={() => onOpenChange(false)}
       />
     </div>
