@@ -47,7 +47,7 @@ const RentasCortas = () => (
               <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-secondary/10 border border-secondary/30 flex items-center justify-center">
                 <p.icon size={24} className="text-secondary" />
               </div>
-              <h3 className="font-display text-xl font-bold text-primary mb-2">{p.title}</h3>
+              <h3 className="font-display text-xl font-bold text-foreground mb-2">{p.title}</h3>
               <p className="text-muted-foreground text-sm font-body leading-relaxed">{p.description}</p>
             </motion.div>
           ))}

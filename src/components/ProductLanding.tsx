@@ -179,7 +179,7 @@ const ProductLanding = ({ data }: ProductLandingProps) => {
                   <span className="text-xs font-body text-secondary uppercase tracking-wider">
                     Paso {i + 1}
                   </span>
-                  <h3 className="font-display text-xl font-bold text-primary mt-1 mb-2">
+                  <h3 className="font-display text-xl font-bold text-foreground mt-1 mb-2">
                     {p.title}
                   </h3>
                   <p className="text-muted-foreground text-sm font-body leading-relaxed">
@@ -236,7 +236,7 @@ const ProductLanding = ({ data }: ProductLandingProps) => {
                   key={faq.question}
                   className="bg-card p-6 border border-border"
                 >
-                  <h3 className="font-display text-lg font-bold text-primary mb-2">
+                  <h3 className="font-display text-lg font-bold text-foreground mb-2">
                     {faq.question}
                   </h3>
                   <p className="text-muted-foreground font-body text-sm leading-relaxed">

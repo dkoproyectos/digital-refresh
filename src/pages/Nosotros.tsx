@@ -30,7 +30,7 @@ const Nosotros = () => (
                   {member.name.split(" ").map(n => n[0]).join("").slice(0, 2)}
                 </AvatarFallback>
               </Avatar>
-              <h3 className="font-display text-lg font-bold text-primary">{member.name}</h3>
+              <h3 className="font-display text-lg font-bold text-foreground">{member.name}</h3>
               <p className="text-secondary font-body text-sm font-medium mt-1">{member.role}</p>
               <p className="text-muted-foreground font-body text-sm mt-3 leading-relaxed">{member.description}</p>
             </motion.div>
@@ -48,7 +48,7 @@ const Nosotros = () => (
           {companyValues.map((v, i) => (
             <motion.div key={v.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-card p-8 border border-border hover:border-secondary/30 transition-colors">
               <v.icon size={28} className="text-secondary mb-4" />
-              <h3 className="font-display text-xl font-bold text-primary mb-2">{v.title}</h3>
+              <h3 className="font-display text-xl font-bold text-foreground mb-2">{v.title}</h3>
               <p className="text-muted-foreground font-body text-sm leading-relaxed">{v.description}</p>
             </motion.div>
           ))}
