@@ -111,6 +111,7 @@ const ContactForm = ({
     if (form.tipoEspacio) parts.push(`Espacio: ${form.tipoEspacio}.`);
     if (form.presupuesto) parts.push(`Presupuesto: ${form.presupuesto}.`);
     if (form.producto) parts.push(`Producto: ${form.producto}.`);
+    if (form.subProducto) parts.push(`Detalle: ${form.subProducto}.`);
     if (form.medidas) parts.push(`Medidas: ${form.medidas}.`);
     if (form.mensaje) parts.push(form.mensaje);
     if (form.celular) parts.push(`Tel: ${form.celular}`);
