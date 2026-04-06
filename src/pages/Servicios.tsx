@@ -29,7 +29,7 @@ const Servicios = () => (
               </div>
               <div style={{ direction: "ltr" }}>
                 <s.icon size={32} className="text-secondary mb-4" />
-                <h3 className="font-display text-3xl font-bold text-primary mb-4">{s.title}</h3>
+                <h3 className="font-display text-3xl font-bold text-foreground mb-4">{s.title}</h3>
                 <p className="text-muted-foreground font-body leading-relaxed mb-6">{s.description}</p>
                 <Link to={s.href} className="btn-gold inline-flex items-center gap-2">
                   Ver más <ArrowRight size={16} />

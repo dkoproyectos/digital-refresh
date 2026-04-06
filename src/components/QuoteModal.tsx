@@ -61,7 +61,7 @@ const QuoteModal = ({
       <Drawer open={open} onOpenChange={onOpenChange}>
         <DrawerContent className="max-h-[90vh]">
           <DrawerHeader className="text-left">
-            <DrawerTitle className="font-display text-xl text-primary">
+            <DrawerTitle className="font-display text-xl text-foreground">
               Cotiza tu proyecto
             </DrawerTitle>
             <DrawerDescription className="text-sm text-muted-foreground">
@@ -78,7 +78,7 @@ const QuoteModal = ({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="font-display text-2xl text-primary">
+          <DialogTitle className="font-display text-2xl text-foreground">
             Cotiza tu proyecto
           </DialogTitle>
           <DialogDescription className="text-sm text-muted-foreground">

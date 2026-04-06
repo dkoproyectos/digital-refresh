@@ -39,7 +39,7 @@ const Recubrimiento = () => (
                       <img src={p.heroImage.src} alt={p.heroImage.alt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                     </div>
                   )}
-                  <h3 className="font-display text-lg font-bold text-primary mb-2">{p.productName}</h3>
+                  <h3 className="font-display text-lg font-bold text-foreground mb-2">{p.productName}</h3>
                   <p className="text-muted-foreground font-body text-sm leading-relaxed mb-3">{p.description}</p>
                   <span className="inline-flex items-center gap-1 text-secondary text-xs font-body font-semibold uppercase tracking-wider group-hover:gap-2 transition-all">
                     Ver producto <ArrowRight size={14} />
@@ -60,7 +60,7 @@ const Recubrimiento = () => (
           <div className="space-y-4">
             {c.faqs.map((faq) => (
               <div key={faq.question} className="bg-card p-6 border border-border">
-                <h3 className="font-display text-lg font-bold text-primary mb-2">{faq.question}</h3>
+                <h3 className="font-display text-lg font-bold text-foreground mb-2">{faq.question}</h3>
                 <p className="text-muted-foreground font-body text-sm">{faq.answer}</p>
               </div>
             ))}
