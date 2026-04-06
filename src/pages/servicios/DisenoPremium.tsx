@@ -1,15 +1,28 @@
+import { useState } from "react";
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
+import QuoteModal from "@/components/QuoteModal";
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 import { disenoPremiumContent } from "@/lib/content/services";
 
 const c = disenoPremiumContent;
 
-const DisenoPremium = () => (
-  <PageLayout>
-    <PageHero {...c.hero} />
+const DisenoPremium = () => {
+  const [quoteOpen, setQuoteOpen] = useState(false);
+
+  return (
+    <PageLayout>
+      <PageHero {...c.hero} />
+
+      {/* Botón flotante de cotizar */}
+      <div className="fixed bottom-24 right-6 z-40">
+        <button onClick={() => setQuoteOpen(true)} className="btn-gold text-xs py-3 px-6 shadow-xl glow-pulse">
+          Cotizar Ahora
+        </button>
+      </div>
+      <QuoteModal open={quoteOpen} onOpenChange={setQuoteOpen} context={c.formContext} />
 
     {c.hero.bannerImage && (
       <section className="relative h-[40vh] min-h-[300px]">
@@ -105,7 +118,8 @@ const DisenoPremium = () => (
         <ContactForm context={c.formContext} variant="service" />
       </div>
     </section>
-  </PageLayout>
-);
+    </PageLayout>
+  );
+};
 
 export default DisenoPremium;
