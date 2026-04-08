@@ -17,7 +17,7 @@ const ServicesSection = () => {
   return (
     <section id="servicios" className="py-0 relative overflow-hidden" ref={ref}>
       <div className="bg-primary">
-        <div className="container pt-28 pb-16">
+        <div className="container pt-16 md:pt-20 pb-12">
           <div className="grid lg:grid-cols-2 gap-8 items-end">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -56,14 +56,15 @@ const ServicesSection = () => {
           </div>
         </div>
 
-        <div className="container pb-28">
+        <div className="container pb-16 md:pb-20">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {homeServices.map((service, i) => (
               <motion.div
                 key={service.title}
-                initial={{ opacity: 0, y: 40 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
+                initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
                 transition={{ duration: 0.8, delay: 0.3 + i * 0.15, ease: [0.16, 1, 0.3, 1] }}
+                whileHover={{ y: -8, transition: { duration: 0.35, ease: [0.34, 1.56, 0.64, 1] } }}
               >
                 <Link
                   to={service.href}
