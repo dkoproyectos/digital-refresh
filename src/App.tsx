@@ -26,6 +26,7 @@ const Contacto = lazy(() => import("./pages/Contacto"));
 // Product landing pages
 const PiedraFlexibleProduct = lazy(() => import("./pages/ventas/piedra-flexible/[slug]"));
 const RecubrimientoProduct = lazy(() => import("./pages/ventas/recubrimiento/[slug]"));
+const RecubrimientoSubProduct = lazy(() => import("./pages/ventas/recubrimiento/[slug]/[subSlug]"));
 const PeliculasProduct = lazy(() => import("./pages/ventas/peliculas-solares/[slug]"));
 const CortinasProduct = lazy(() => import("./pages/ventas/cortinas-persianas/[slug]"));
 const MobiliarioProduct = lazy(() => import("./pages/ventas/mobiliario-exterior/[slug]"));
@@ -53,6 +54,7 @@ const App = () => (
             <Route path="/productos/piedra-flexible/:slug" element={<PiedraFlexibleProduct />} />
             <Route path="/productos/recubrimiento" element={<Recubrimiento />} />
             <Route path="/productos/recubrimiento/:slug" element={<RecubrimientoProduct />} />
+            <Route path="/productos/recubrimiento/:slug/:subSlug" element={<RecubrimientoSubProduct />} />
             <Route path="/productos/peliculas-solares" element={<PeliculasSolares />} />
             <Route path="/productos/peliculas-solares/:slug" element={<PeliculasProduct />} />
             <Route path="/productos/cortinas-persianas" element={<CortinasPersianas />} />
