@@ -102,7 +102,7 @@ export const homeSaleCategories: SaleCategory[] = [
   },
   {
     id: "recubrimiento",
-    title: "Recubrimiento de Paredes",
+    title: "Recubrimiento de Muros",
     subtitle: "Interior & Exterior",
     description: "Paneles decorativos, enchapes y soluciones de revestimiento para transformar cualquier superficie con estilo y durabilidad.",
     image: { src: ventaRecubrimiento, alt: "Recubrimiento de paredes" },

@@ -1,6 +1,6 @@
 /**
  * ============================================================
- * CONTENIDO: Subcategorías de Recubrimiento de Paredes
+ * CONTENIDO: Subcategorías de Recubrimiento de Muros
  * ============================================================
  * 🔌 Sanity: *[_type == "product" && category == "recubrimiento"]
  *    Nivel 1: subcategorías (Papel de Colgadura, Panel para Muros)
@@ -22,7 +22,7 @@ const sharedProcess: ProductLandingData["process"] = [
   { icon: Wrench, title: "Instalación", description: "Nuestro equipo profesional realiza la instalación completa." },
 ];
 
-const parent = { label: "Recubrimiento de Paredes", href: "/productos/recubrimiento" };
+const parent = { label: "Recubrimiento de Muros", href: "/productos/recubrimiento" };
 
 export const recubrimientoProducts: Record<string, ProductLandingData> = {
   "papel-colgadura": {
