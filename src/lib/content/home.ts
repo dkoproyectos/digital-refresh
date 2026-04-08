@@ -94,10 +94,10 @@ export const homeSaleCategories: SaleCategory[] = [
     image: { src: ventaRecubrimiento, alt: "Piedra flexible" },
     href: "/productos/piedra-flexible",
     products: [
-      { name: "Piedra flexible interior" },
-      { name: "Piedra flexible exterior" },
-      { name: "Piedra flexible fachadas" },
-      { name: "Piedra flexible muebles" },
+      { name: "Piedra flexible interior", href: "/productos/piedra-flexible/piedra-flexible-interior" },
+      { name: "Piedra flexible exterior", href: "/productos/piedra-flexible/piedra-flexible-exterior" },
+      { name: "Piedra flexible fachadas", href: "/productos/piedra-flexible/piedra-flexible-fachadas" },
+      { name: "Piedra flexible muebles", href: "/productos/piedra-flexible/piedra-flexible-muebles" },
     ],
   },
   {
