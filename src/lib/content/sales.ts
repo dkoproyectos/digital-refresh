@@ -34,7 +34,7 @@ export const ventasLanding = {
       image: { src: ventaRecubrimiento, alt: "Piedra flexible" },
     },
     {
-      title: "Recubrimiento de Paredes",
+      title: "Recubrimiento de Muros",
       description: "Paneles 3D, papel tapiz, piedra decorativa y enchapes para transformar tus muros interiores y exteriores.",
       href: "/productos/recubrimiento",
       image: { src: ventaRecubrimiento, alt: "Recubrimiento de paredes" },
@@ -87,7 +87,7 @@ export const recubrimientoContent: SalePageContent = {
     { question: "¿Tienen muestras disponibles?", answer: "Sí, podemos llevar muestras a tu domicilio o visitarnos en showroom." },
     { question: "¿Cuánto tarda la instalación?", answer: "Depende del área, pero la mayoría de proyectos se completan en 1 a 3 días." },
   ],
-  formContext: "Recubrimiento de Paredes",
+  formContext: "Recubrimiento de Muros",
 };
 
 // ─── PELÍCULAS SOLARES ───────────────────────────────────────
