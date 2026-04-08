@@ -3,6 +3,9 @@ import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
 import QuoteModal from "@/components/QuoteModal";
+import CreditSimulatorModal from "@/components/CreditSimulatorModal";
+import CreditSimulatorCTA from "@/components/CreditSimulatorCTA";
+import CreditFloatingButton from "@/components/CreditFloatingButton";
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 import { rentasCortasContent } from "@/lib/content/services";
@@ -11,18 +14,20 @@ const c = rentasCortasContent;
 
 const RentasCortas = () => {
   const [quoteOpen, setQuoteOpen] = useState(false);
+  const [creditOpen, setCreditOpen] = useState(false);
 
   return (
     <PageLayout>
       <PageHero {...c.hero} />
 
       <QuoteModal open={quoteOpen} onOpenChange={setQuoteOpen} context={c.formContext} />
+      <CreditSimulatorModal open={creditOpen} onOpenChange={setCreditOpen} serviceContext="Acabados para Rentas Cortas" />
+      <CreditFloatingButton onClick={() => setCreditOpen(true)} />
 
     {c.hero.bannerImage && (
       <section className="relative h-[35vh] min-h-[260px]">
         <img src={c.hero.bannerImage.src} alt={c.hero.bannerImage.alt} className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/30 to-primary/10" />
-        {/* Big CTA on banner */}
         <div className="absolute bottom-8 left-0 right-0 flex justify-center">
           <button onClick={() => setQuoteOpen(true)} className="btn-gold text-base px-12 py-4 tracking-[3px] shadow-2xl">
             Cotizar Ahora
@@ -49,6 +54,8 @@ const RentasCortas = () => {
         <img src={c.intro.image.src} alt={c.intro.image.alt} className="w-full h-[400px] object-cover rounded-sm" />
       </div>
     </section>
+
+    <CreditSimulatorCTA onOpenSimulator={() => setCreditOpen(true)} />
 
     <section className="py-20 bg-muted/30">
       <div className="container">

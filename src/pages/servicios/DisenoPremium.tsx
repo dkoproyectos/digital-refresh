@@ -4,6 +4,9 @@ import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
 import FAQSection from "@/components/FAQSection";
 import QuoteModal from "@/components/QuoteModal";
+import CreditSimulatorModal from "@/components/CreditSimulatorModal";
+import CreditSimulatorCTA from "@/components/CreditSimulatorCTA";
+import CreditFloatingButton from "@/components/CreditFloatingButton";
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 import { disenoPremiumContent } from "@/lib/content/services";
@@ -12,18 +15,20 @@ const c = disenoPremiumContent;
 
 const DisenoPremium = () => {
   const [quoteOpen, setQuoteOpen] = useState(false);
+  const [creditOpen, setCreditOpen] = useState(false);
 
   return (
     <PageLayout>
       <PageHero {...c.hero} />
 
       <QuoteModal open={quoteOpen} onOpenChange={setQuoteOpen} context={c.formContext} />
+      <CreditSimulatorModal open={creditOpen} onOpenChange={setCreditOpen} serviceContext="Diseño de Interior Premium" />
+      <CreditFloatingButton onClick={() => setCreditOpen(true)} />
 
     {c.hero.bannerImage && (
       <section className="relative h-[40vh] min-h-[300px]">
         <img src={c.hero.bannerImage.src} alt={c.hero.bannerImage.alt} className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/30 to-primary/10" />
-        {/* Big CTA on banner */}
         <div className="absolute bottom-8 left-0 right-0 flex justify-center">
           <button onClick={() => setQuoteOpen(true)} className="btn-gold text-base px-12 py-4 tracking-[3px] shadow-2xl">
             Cotizar Ahora
@@ -53,6 +58,8 @@ const DisenoPremium = () => {
         </div>
       </div>
     </section>
+
+    <CreditSimulatorCTA onOpenSimulator={() => setCreditOpen(true)} />
 
     <section className="py-20 bg-muted/30">
       <div className="container">
