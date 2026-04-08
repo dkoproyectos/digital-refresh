@@ -105,7 +105,7 @@ export const homeSaleCategories: SaleCategory[] = [
     title: "Recubrimiento de Muros",
     subtitle: "Interior & Exterior",
     description: "Paneles decorativos, enchapes y soluciones de revestimiento para transformar cualquier superficie con estilo y durabilidad.",
-    image: { src: ventaRecubrimiento, alt: "Recubrimiento de paredes" },
+    image: { src: ventaRecubrimiento, alt: "Recubrimiento de muros" },
     href: "/productos/recubrimiento",
     products: [
       { name: "Papel de Colgadura", href: "/productos/recubrimiento/papel-colgadura" },
