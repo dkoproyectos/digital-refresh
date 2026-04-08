@@ -32,7 +32,7 @@ const subOptionsMap: Record<string, string[]> = {
   "Piedra Flexible": ["Piedra flexible interior", "Piedra flexible exterior", "Piedra flexible fachadas", "Piedra flexible muebles"],
   "Cortinas, Persianas y Toldos": ["Cortinas Roller", "Cortinas Blackout", "Sheer Elegance", "Persianas de Madera", "Persianas de Aluminio", "Toldos"],
   "Películas de Protección Solar": ["Control Solar", "Privacidad", "Seguridad", "Decorativa"],
-  "Recubrimiento de Paredes": ["Paneles 3D", "Papel Tapiz", "Piedra Decorativa", "Enchapes Cerámicos", "Madera Decorativa", "Microcemento"],
+  "Recubrimiento de Paredes": ["Papel de Colgadura", "Panel para Muros"],
   "Mobiliario Exterior": ["Salas de Exterior", "Comedores de Terraza", "Camastros", "Sombrillas", "Macetas", "Accesorios"],
 };
 
