@@ -31,7 +31,7 @@ const Footer = () => (
             <Link to="/productos/piedra-flexible" className="text-sm text-primary-foreground/70 hover:text-secondary transition-colors font-body">Piedra Flexible</Link>
             <Link to="/productos/cortinas-persianas" className="text-sm text-primary-foreground/70 hover:text-secondary transition-colors font-body">Cortinas y Persianas</Link>
             <Link to="/productos/peliculas-solares" className="text-sm text-primary-foreground/70 hover:text-secondary transition-colors font-body">Películas Protección Solar</Link>
-            <Link to="/productos/recubrimiento" className="text-sm text-primary-foreground/70 hover:text-secondary transition-colors font-body">Recubrimiento Paredes</Link>
+            <Link to="/productos/recubrimiento" className="text-sm text-primary-foreground/70 hover:text-secondary transition-colors font-body">Recubrimiento Muros</Link>
             <Link to="/productos/mobiliario-exterior" className="text-sm text-primary-foreground/70 hover:text-secondary transition-colors font-body">Mobiliario Exterior</Link>
           </div>
         </div>
