@@ -58,7 +58,7 @@ const Recubrimiento = () => (
     <section className="py-20 bg-background">
       <div className="container max-w-2xl text-center">
         <p className="section-label">Cotiza ahora</p>
-        <h2 className="section-title">Transforma tus <span>paredes</span></h2>
+        <h2 className="section-title">Transforma tus <span>muros</span></h2>
         <ContactForm context={c.formContext} variant="sales" productOptions={c.products.map((p) => p.name)} />
       </div>
     </section>

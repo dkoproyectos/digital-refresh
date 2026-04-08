@@ -65,7 +65,7 @@ export const recubrimientoContent: SalePageContent = {
   hero: {
     label: "Productos · Recubrimiento",
     title: "Recubrimiento de",
-    highlight: "Paredes",
+    highlight: "Muros",
     description: "Soluciones para exterior e interior que transforman cualquier muro en una obra de arte.",
     bannerImage: { src: ventaRecubrimiento, alt: "Recubrimiento de muros" },
   },
