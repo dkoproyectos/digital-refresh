@@ -15,6 +15,7 @@ const HogarVis = lazy(() => import("./pages/servicios/HogarVis"));
 const HogarVisStyle = lazy(() => import("./pages/servicios/hogar-vis/[slug]"));
 const RentasCortas = lazy(() => import("./pages/servicios/RentasCortas"));
 const Productos = lazy(() => import("./pages/Ventas"));
+const PiedraFlexible = lazy(() => import("./pages/ventas/PiedraFlexible"));
 const Recubrimiento = lazy(() => import("./pages/ventas/Recubrimiento"));
 const PeliculasSolares = lazy(() => import("./pages/ventas/PeliculasSolares"));
 const CortinasPersianas = lazy(() => import("./pages/ventas/CortinasPersianas"));
@@ -23,6 +24,7 @@ const Proyectos = lazy(() => import("./pages/Proyectos"));
 const Contacto = lazy(() => import("./pages/Contacto"));
 
 // Product landing pages
+const PiedraFlexibleProduct = lazy(() => import("./pages/ventas/piedra-flexible/[slug]"));
 const RecubrimientoProduct = lazy(() => import("./pages/ventas/recubrimiento/[slug]"));
 const PeliculasProduct = lazy(() => import("./pages/ventas/peliculas-solares/[slug]"));
 const CortinasProduct = lazy(() => import("./pages/ventas/cortinas-persianas/[slug]"));
@@ -47,6 +49,8 @@ const App = () => (
             <Route path="/servicios/hogar-vis/:slug" element={<HogarVisStyle />} />
             <Route path="/servicios/rentas-cortas" element={<RentasCortas />} />
             <Route path="/productos" element={<Productos />} />
+            <Route path="/productos/piedra-flexible" element={<PiedraFlexible />} />
+            <Route path="/productos/piedra-flexible/:slug" element={<PiedraFlexibleProduct />} />
             <Route path="/productos/recubrimiento" element={<Recubrimiento />} />
             <Route path="/productos/recubrimiento/:slug" element={<RecubrimientoProduct />} />
             <Route path="/productos/peliculas-solares" element={<PeliculasSolares />} />
