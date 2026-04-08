@@ -63,7 +63,7 @@ export const ventasLanding = {
 // ─── RECUBRIMIENTO ───────────────────────────────────────────
 export const recubrimientoContent: SalePageContent = {
   hero: {
-    label: "Ventas · Recubrimiento",
+    label: "Productos · Recubrimiento",
     title: "Recubrimiento de",
     highlight: "Paredes",
     description: "Soluciones para exterior e interior que transforman cualquier muro en una obra de arte.",
@@ -93,7 +93,7 @@ export const recubrimientoContent: SalePageContent = {
 // ─── PELÍCULAS SOLARES ───────────────────────────────────────
 export const peliculasSolaresContent: SalePageContent = {
   hero: {
-    label: "Ventas · Películas Solares",
+    label: "Productos · Películas Solares",
     title: "Películas de Protección",
     highlight: "Solar",
     description: "Control solar, seguridad y privacidad para vidrios residenciales y comerciales.",
@@ -119,7 +119,7 @@ export const peliculasSolaresContent: SalePageContent = {
 // ─── CORTINAS Y PERSIANAS ────────────────────────────────────
 export const cortinasContent: SalePageContent = {
   hero: {
-    label: "Ventas · Cortinas y Persianas",
+    label: "Productos · Cortinas y Persianas",
     title: "Cortinas, Persianas y",
     highlight: "Toldos",
     description: "Control de luz, privacidad y diseño para cada espacio de tu hogar u oficina.",
@@ -139,7 +139,7 @@ export const cortinasContent: SalePageContent = {
 // ─── MOBILIARIO EXTERIOR ─────────────────────────────────────
 export const mobiliarioContent: SalePageContent = {
   hero: {
-    label: "Ventas · Mobiliario Exterior",
+    label: "Productos · Mobiliario Exterior",
     title: "Mobiliario",
     highlight: "Exterior",
     description: "Muebles resistentes y con diseño para terrazas, balcones, jardines y zonas sociales.",
