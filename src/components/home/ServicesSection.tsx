@@ -61,9 +61,10 @@ const ServicesSection = () => {
             {homeServices.map((service, i) => (
               <motion.div
                 key={service.title}
-                initial={{ opacity: 0, y: 40 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
+                initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
                 transition={{ duration: 0.8, delay: 0.3 + i * 0.15, ease: [0.16, 1, 0.3, 1] }}
+                whileHover={{ y: -8, transition: { duration: 0.35, ease: [0.34, 1.56, 0.64, 1] } }}
               >
                 <Link
                   to={service.href}
