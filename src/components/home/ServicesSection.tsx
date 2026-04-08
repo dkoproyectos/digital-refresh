@@ -17,7 +17,7 @@ const ServicesSection = () => {
   return (
     <section id="servicios" className="py-0 relative overflow-hidden" ref={ref}>
       <div className="bg-primary">
-        <div className="container pt-28 pb-16">
+        <div className="container pt-16 md:pt-20 pb-12">
           <div className="grid lg:grid-cols-2 gap-8 items-end">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -56,7 +56,7 @@ const ServicesSection = () => {
           </div>
         </div>
 
-        <div className="container pb-28">
+        <div className="container pb-16 md:pb-20">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {homeServices.map((service, i) => (
               <motion.div

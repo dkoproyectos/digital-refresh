@@ -7,7 +7,7 @@ const WhyDKOSection = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-24 bg-background" ref={ref}>
+    <section className="py-16 md:py-20 bg-background" ref={ref}>
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
