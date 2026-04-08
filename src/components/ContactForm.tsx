@@ -59,7 +59,7 @@ const defaultProjectTypes = [
   "Cortinas y Persianas",
   "Películas Solares",
   "Mobiliario Exterior",
-  "Recubrimiento de Paredes",
+  "Recubrimiento de Muros",
   "Otro",
 ];
 
