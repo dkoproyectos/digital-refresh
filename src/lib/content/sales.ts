@@ -37,7 +37,7 @@ export const ventasLanding = {
       title: "Recubrimiento de Muros",
       description: "Paneles 3D, papel tapiz, piedra decorativa y enchapes para transformar tus muros interiores y exteriores.",
       href: "/productos/recubrimiento",
-      image: { src: ventaRecubrimiento, alt: "Recubrimiento de paredes" },
+      image: { src: ventaRecubrimiento, alt: "Recubrimiento de muros" },
     },
     {
       title: "Películas de Protección Solar",
@@ -67,7 +67,7 @@ export const recubrimientoContent: SalePageContent = {
     title: "Recubrimiento de",
     highlight: "Paredes",
     description: "Soluciones para exterior e interior que transforman cualquier muro en una obra de arte.",
-    bannerImage: { src: ventaRecubrimiento, alt: "Recubrimiento de paredes" },
+    bannerImage: { src: ventaRecubrimiento, alt: "Recubrimiento de muros" },
   },
   products: [
     { name: "Paneles 3D", description: "Relieve tridimensional para paredes interiores con diseños exclusivos." },
