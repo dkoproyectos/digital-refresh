@@ -13,7 +13,7 @@ const services = [
 
 const productos = [
   { label: "Piedra Flexible", href: "/productos/piedra-flexible" },
-  { label: "Recubrimiento de Paredes", href: "/productos/recubrimiento" },
+  { label: "Recubrimiento de Muros", href: "/productos/recubrimiento" },
   { label: "Películas de Protección Solar", href: "/productos/peliculas-solares" },
   { label: "Cortinas, Persianas y Toldos", href: "/productos/cortinas-persianas" },
   { label: "Mobiliario Exterior", href: "/productos/mobiliario-exterior" },
@@ -32,7 +32,7 @@ const subOptionsMap: Record<string, string[]> = {
   "Piedra Flexible": ["Piedra flexible interior", "Piedra flexible exterior", "Piedra flexible fachadas", "Piedra flexible muebles"],
   "Cortinas, Persianas y Toldos": ["Cortinas Roller", "Cortinas Blackout", "Sheer Elegance", "Persianas de Madera", "Persianas de Aluminio", "Toldos"],
   "Películas de Protección Solar": ["Control Solar", "Privacidad", "Seguridad", "Decorativa"],
-  "Recubrimiento de Paredes": ["Papel de Colgadura", "Panel para Muros"],
+  "Recubrimiento de Muros": ["Papel de Colgadura", "Panel para Muros"],
   "Mobiliario Exterior": ["Salas de Exterior", "Comedores de Terraza", "Camastros", "Sombrillas", "Macetas", "Accesorios"],
 };
 
