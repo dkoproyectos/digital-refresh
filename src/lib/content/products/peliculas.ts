@@ -20,7 +20,7 @@ const sharedProcess: ProductLandingData["process"] = [
   { icon: Wrench, title: "Instalación", description: "Aplicación profesional con garantía del fabricante." },
 ];
 
-const parent = { label: "Películas Solares", href: "/ventas/peliculas-solares" };
+const parent = { label: "Películas Solares", href: "/productos/peliculas-solares" };
 
 export const peliculasProducts: Record<string, ProductLandingData> = {
   "control-solar": {

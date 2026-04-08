@@ -5,7 +5,7 @@ import { cortinasProducts } from "@/lib/content/products/cortinas";
 const CortinasProduct = () => {
   const { slug } = useParams<{ slug: string }>();
   const data = slug ? cortinasProducts[slug] : undefined;
-  if (!data) return <Navigate to="/ventas/cortinas-persianas" replace />;
+  if (!data) return <Navigate to="/productos/cortinas-persianas" replace />;
   return <ProductLanding data={data} />;
 };
 

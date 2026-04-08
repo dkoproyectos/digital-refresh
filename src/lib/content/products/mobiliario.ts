@@ -21,7 +21,7 @@ const sharedProcess: ProductLandingData["process"] = [
   { icon: Wrench, title: "Armado", description: "Ensamblaje profesional y verificación de calidad." },
 ];
 
-const parent = { label: "Mobiliario Exterior", href: "/ventas/mobiliario-exterior" };
+const parent = { label: "Mobiliario Exterior", href: "/productos/mobiliario-exterior" };
 
 export const mobiliarioProducts: Record<string, ProductLandingData> = {
   "salas-exterior": {
