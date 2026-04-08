@@ -84,20 +84,34 @@ export const whyDkoContent = {
     "En DKO no solo diseñamos espacios, los hacemos realidad. Nuestro modelo integral abarca desde la planificación presupuestal hasta la entrega final, con financiación flexible y los mejores materiales del mercado.",
 };
 
-// ─── VENTAS (HOME) ───────────────────────────────────────────
+// ─── PRODUCTOS (HOME) ────────────────────────────────────────
 export const homeSaleCategories: SaleCategory[] = [
+  {
+    id: "piedra-flexible",
+    title: "Piedra Flexible",
+    subtitle: "Revestimiento innovador",
+    description: "Láminas ultradelgadas de piedra natural flexible para revestir cualquier superficie interior o exterior con un acabado único y elegante.",
+    image: { src: ventaRecubrimiento, alt: "Piedra flexible" },
+    href: "/productos/piedra-flexible",
+    products: [
+      { name: "Piedra flexible interior" },
+      { name: "Piedra flexible exterior" },
+      { name: "Piedra flexible fachadas" },
+      { name: "Piedra flexible muebles" },
+    ],
+  },
   {
     id: "recubrimiento",
     title: "Recubrimiento de Paredes",
     subtitle: "Interior & Exterior",
     description: "Paneles decorativos, enchapes y soluciones de revestimiento para transformar cualquier superficie con estilo y durabilidad.",
     image: { src: ventaRecubrimiento, alt: "Recubrimiento de paredes" },
-    href: "/ventas/recubrimiento",
+    href: "/productos/recubrimiento",
     products: [
-      { name: "Paneles 3D decorativos", href: "/ventas/recubrimiento/paneles-3d" },
-      { name: "Enchape de piedra natural", href: "/ventas/recubrimiento/piedra-decorativa" },
-      { name: "Papel tapiz premium", href: "/ventas/recubrimiento/papel-tapiz" },
-      { name: "Microcemento", href: "/ventas/recubrimiento/microcemento" },
+      { name: "Paneles 3D decorativos", href: "/productos/recubrimiento/paneles-3d" },
+      { name: "Enchape de piedra natural", href: "/productos/recubrimiento/piedra-decorativa" },
+      { name: "Papel tapiz premium", href: "/productos/recubrimiento/papel-tapiz" },
+      { name: "Microcemento", href: "/productos/recubrimiento/microcemento" },
     ],
   },
   {
@@ -106,12 +120,12 @@ export const homeSaleCategories: SaleCategory[] = [
     subtitle: "Control térmico & UV",
     description: "Películas de alta tecnología para ventanas que reducen el calor, bloquean rayos UV y mejoran la eficiencia energética.",
     image: { src: ventaPeliculas, alt: "Películas de protección solar" },
-    href: "/ventas/peliculas-solares",
+    href: "/productos/peliculas-solares",
     products: [
-      { name: "Control solar", href: "/ventas/peliculas-solares/control-solar" },
-      { name: "Privacidad", href: "/ventas/peliculas-solares/privacidad" },
-      { name: "Seguridad anti-impacto", href: "/ventas/peliculas-solares/seguridad" },
-      { name: "Decorativa esmerilada", href: "/ventas/peliculas-solares/decorativa" },
+      { name: "Control solar", href: "/productos/peliculas-solares/control-solar" },
+      { name: "Privacidad", href: "/productos/peliculas-solares/privacidad" },
+      { name: "Seguridad anti-impacto", href: "/productos/peliculas-solares/seguridad" },
+      { name: "Decorativa esmerilada", href: "/productos/peliculas-solares/decorativa" },
     ],
   },
   {
@@ -120,12 +134,12 @@ export const homeSaleCategories: SaleCategory[] = [
     subtitle: "Control de luz & privacidad",
     description: "Soluciones a medida con las mejores marcas para controlar la luz, la temperatura y la privacidad de tus espacios.",
     image: { src: ventaCortinas, alt: "Cortinas y persianas" },
-    href: "/ventas/cortinas-persianas",
+    href: "/productos/cortinas-persianas",
     products: [
-      { name: "Cortinas roller", href: "/ventas/cortinas-persianas/roller" },
-      { name: "Cortinas blackout", href: "/ventas/cortinas-persianas/blackout" },
-      { name: "Persianas de madera", href: "/ventas/cortinas-persianas/persianas-madera" },
-      { name: "Toldos retráctiles", href: "/ventas/cortinas-persianas/toldos" },
+      { name: "Cortinas roller", href: "/productos/cortinas-persianas/roller" },
+      { name: "Cortinas blackout", href: "/productos/cortinas-persianas/blackout" },
+      { name: "Persianas de madera", href: "/productos/cortinas-persianas/persianas-madera" },
+      { name: "Toldos retráctiles", href: "/productos/cortinas-persianas/toldos" },
     ],
   },
   {
@@ -134,12 +148,12 @@ export const homeSaleCategories: SaleCategory[] = [
     subtitle: "Terrazas & jardines",
     description: "Mobiliario resistente a la intemperie con diseño elegante para terrazas, jardines, piscinas y zonas sociales al aire libre.",
     image: { src: ventaMobiliario, alt: "Mobiliario exterior" },
-    href: "/ventas/mobiliario-exterior",
+    href: "/productos/mobiliario-exterior",
     products: [
-      { name: "Salas de exterior", href: "/ventas/mobiliario-exterior/salas-exterior" },
-      { name: "Comedores de terraza", href: "/ventas/mobiliario-exterior/comedores-terraza" },
-      { name: "Sombrillas premium", href: "/ventas/mobiliario-exterior/sombrillas" },
-      { name: "Camastros", href: "/ventas/mobiliario-exterior/camastros" },
+      { name: "Salas de exterior", href: "/productos/mobiliario-exterior/salas-exterior" },
+      { name: "Comedores de terraza", href: "/productos/mobiliario-exterior/comedores-terraza" },
+      { name: "Sombrillas premium", href: "/productos/mobiliario-exterior/sombrillas" },
+      { name: "Camastros", href: "/productos/mobiliario-exterior/camastros" },
     ],
   },
 ];
