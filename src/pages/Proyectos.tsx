@@ -1,6 +1,7 @@
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
+import TestimonialsSection from "@/components/home/TestimonialsSection";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { projectsHero, projectFilters, allProjects } from "@/lib/content/projects";
@@ -45,6 +46,8 @@ const Proyectos = () => {
           </div>
         </div>
       </section>
+
+      <TestimonialsSection />
 
       <section className="py-20 bg-muted/30">
         <div className="container max-w-2xl text-center">
