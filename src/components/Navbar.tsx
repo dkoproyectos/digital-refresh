@@ -11,23 +11,25 @@ const services = [
   { label: "Acabados para Rentas Cortas", href: "/servicios/rentas-cortas" },
 ];
 
-const ventas = [
-  { label: "Recubrimiento de Paredes", href: "/ventas/recubrimiento" },
-  { label: "Películas de Protección Solar", href: "/ventas/peliculas-solares" },
-  { label: "Cortinas, Persianas y Toldos", href: "/ventas/cortinas-persianas" },
-  { label: "Mobiliario Exterior", href: "/ventas/mobiliario-exterior" },
+const productos = [
+  { label: "Piedra Flexible", href: "/productos/piedra-flexible" },
+  { label: "Recubrimiento de Paredes", href: "/productos/recubrimiento" },
+  { label: "Películas de Protección Solar", href: "/productos/peliculas-solares" },
+  { label: "Cortinas, Persianas y Toldos", href: "/productos/cortinas-persianas" },
+  { label: "Mobiliario Exterior", href: "/productos/mobiliario-exterior" },
 ];
 
 const allOptions = [
   "── Servicios ──",
   ...services.map((s) => s.label),
   "── Productos ──",
-  ...ventas.map((v) => v.label),
+  ...productos.map((v) => v.label),
 ];
 
 /** Sub-opciones por categoría seleccionada */
 const subOptionsMap: Record<string, string[]> = {
   "Tu Hogar VIS": ["Estilo Moderno", "Estilo Minimalista", "Estilo Industrial"],
+  "Piedra Flexible": ["Piedra flexible interior", "Piedra flexible exterior", "Piedra flexible fachadas"],
   "Cortinas, Persianas y Toldos": ["Cortinas Roller", "Cortinas Blackout", "Sheer Elegance", "Persianas de Madera", "Persianas de Aluminio", "Toldos"],
   "Películas de Protección Solar": ["Control Solar", "Privacidad", "Seguridad", "Decorativa"],
   "Recubrimiento de Paredes": ["Paneles 3D", "Papel Tapiz", "Piedra Decorativa", "Enchapes Cerámicos", "Madera Decorativa", "Microcemento"],
@@ -51,7 +53,7 @@ const Navbar = () => {
           <NavItem href="/" label="Home" />
           <NavItem href="/nosotros" label="Nosotros" />
           <DropdownNav label="Servicios" items={services} open={openDropdown === "servicios"} onToggle={() => setOpenDropdown(openDropdown === "servicios" ? null : "servicios")} onClose={() => setOpenDropdown(null)} />
-          <DropdownNav label="Ventas" items={ventas} open={openDropdown === "ventas"} onToggle={() => setOpenDropdown(openDropdown === "ventas" ? null : "ventas")} onClose={() => setOpenDropdown(null)} />
+          <DropdownNav label="Productos" items={productos} open={openDropdown === "productos"} onToggle={() => setOpenDropdown(openDropdown === "productos" ? null : "productos")} onClose={() => setOpenDropdown(null)} />
           <NavItem href="/proyectos" label="Proyectos" />
           <NavItem href="/contacto" label="Contacto" />
         </div>
@@ -72,7 +74,7 @@ const Navbar = () => {
               <MobileLink href="/" label="Home" onClick={() => setMobileOpen(false)} />
               <MobileLink href="/nosotros" label="Nosotros" onClick={() => setMobileOpen(false)} />
               <MobileDropdown label="Servicios" items={services} onItemClick={() => setMobileOpen(false)} />
-              <MobileDropdown label="Ventas" items={ventas} onItemClick={() => setMobileOpen(false)} />
+              <MobileDropdown label="Productos" items={productos} onItemClick={() => setMobileOpen(false)} />
               <MobileLink href="/proyectos" label="Proyectos" onClick={() => setMobileOpen(false)} />
               <MobileLink href="/contacto" label="Contacto" onClick={() => setMobileOpen(false)} />
               <button onClick={() => { setMobileOpen(false); setQuoteOpen(true); }} className="btn-gold text-xs py-3 text-center mt-2">

@@ -29,7 +29,7 @@ const VentasSection = () => {
         >
           <p className="text-[10px] font-semibold uppercase tracking-[4px] text-secondary mb-2">Catálogo de Productos</p>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground leading-tight mb-4">
-            Nuestras líneas de <span className="text-secondary">venta</span>
+            Nuestras líneas de <span className="text-secondary">productos</span>
           </h2>
           <p className="text-primary-foreground/80 font-body text-base">
             Productos de alta calidad para complementar y transformar tus espacios.

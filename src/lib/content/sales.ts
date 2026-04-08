@@ -21,34 +21,40 @@ import project3 from "@/assets/project-3.jpg";
 // ─── LANDING VENTAS ──────────────────────────────────────────
 export const ventasLanding = {
   hero: {
-    label: "Ventas",
+    label: "Productos",
     title: "Productos para tu",
     highlight: "espacio",
-    description: "Catálogo completo de soluciones en recubrimientos, protección solar, cortinas y mobiliario exterior.",
+    description: "Catálogo completo de soluciones en piedra flexible, recubrimientos, protección solar, cortinas y mobiliario exterior.",
   },
   categories: [
     {
+      title: "Piedra Flexible",
+      description: "Láminas ultradelgadas de piedra natural flexible para revestir cualquier superficie con un acabado único.",
+      href: "/productos/piedra-flexible",
+      image: { src: ventaRecubrimiento, alt: "Piedra flexible" },
+    },
+    {
       title: "Recubrimiento de Paredes",
       description: "Paneles 3D, papel tapiz, piedra decorativa y enchapes para transformar tus muros interiores y exteriores.",
-      href: "/ventas/recubrimiento",
+      href: "/productos/recubrimiento",
       image: { src: ventaRecubrimiento, alt: "Recubrimiento de paredes" },
     },
     {
       title: "Películas de Protección Solar",
       description: "Control solar, privacidad, seguridad anti-impacto y decorativa para vidrios residenciales y comerciales.",
-      href: "/ventas/peliculas-solares",
+      href: "/productos/peliculas-solares",
       image: { src: ventaPeliculas, alt: "Películas solares" },
     },
     {
       title: "Cortinas, Persianas y Toldos",
       description: "Roller, blackout, sheer elegance, persianas en madera y aluminio, y toldos retráctiles.",
-      href: "/ventas/cortinas-persianas",
+      href: "/productos/cortinas-persianas",
       image: { src: ventaCortinas, alt: "Cortinas y persianas" },
     },
     {
       title: "Mobiliario Exterior",
       description: "Muebles para terraza, balcón y jardín en materiales resistentes a la intemperie y diseño contemporáneo.",
-      href: "/ventas/mobiliario-exterior",
+      href: "/productos/mobiliario-exterior",
       image: { src: ventaMobiliario, alt: "Mobiliario exterior" },
     },
   ],
