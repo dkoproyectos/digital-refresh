@@ -32,7 +32,7 @@ const Recubrimiento = () => (
             return (
               <motion.div key={slug} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}>
                 <Link
-                  to={`/ventas/recubrimiento/${slug}`}
+                  to={`/productos/recubrimiento/${slug}`}
                   className="block bg-card p-6 border border-border hover:border-secondary/30 hover:shadow-md transition-all group"
                 >
                   {p.heroImage && (
