@@ -20,7 +20,7 @@ const sharedProcess: ProductLandingData["process"] = [
   { icon: Wrench, title: "Instalación", description: "Nuestro equipo profesional realiza la instalación completa." },
 ];
 
-const parent = { label: "Recubrimiento de Paredes", href: "/ventas/recubrimiento" };
+const parent = { label: "Recubrimiento de Paredes", href: "/productos/recubrimiento" };
 
 export const recubrimientoProducts: Record<string, ProductLandingData> = {
   "paneles-3d": {

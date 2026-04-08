@@ -26,12 +26,13 @@ const Footer = () => (
         </div>
 
         <div>
-          <h4 className="text-xs font-body font-semibold uppercase tracking-[3px] text-secondary mb-6">Ventas</h4>
+          <h4 className="text-xs font-body font-semibold uppercase tracking-[3px] text-secondary mb-6">Productos</h4>
           <div className="flex flex-col gap-3">
-            <Link to="/ventas/cortinas-persianas" className="text-sm text-primary-foreground/70 hover:text-secondary transition-colors font-body">Cortinas y Persianas</Link>
-            <Link to="/ventas/peliculas-solares" className="text-sm text-primary-foreground/70 hover:text-secondary transition-colors font-body">Películas Protección Solar</Link>
-            <Link to="/ventas/recubrimiento" className="text-sm text-primary-foreground/70 hover:text-secondary transition-colors font-body">Recubrimiento Paredes</Link>
-            <Link to="/ventas/mobiliario-exterior" className="text-sm text-primary-foreground/70 hover:text-secondary transition-colors font-body">Mobiliario Exterior</Link>
+            <Link to="/productos/piedra-flexible" className="text-sm text-primary-foreground/70 hover:text-secondary transition-colors font-body">Piedra Flexible</Link>
+            <Link to="/productos/cortinas-persianas" className="text-sm text-primary-foreground/70 hover:text-secondary transition-colors font-body">Cortinas y Persianas</Link>
+            <Link to="/productos/peliculas-solares" className="text-sm text-primary-foreground/70 hover:text-secondary transition-colors font-body">Películas Protección Solar</Link>
+            <Link to="/productos/recubrimiento" className="text-sm text-primary-foreground/70 hover:text-secondary transition-colors font-body">Recubrimiento Paredes</Link>
+            <Link to="/productos/mobiliario-exterior" className="text-sm text-primary-foreground/70 hover:text-secondary transition-colors font-body">Mobiliario Exterior</Link>
           </div>
         </div>
 

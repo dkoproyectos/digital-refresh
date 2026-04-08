@@ -5,7 +5,7 @@ import { peliculasProducts } from "@/lib/content/products/peliculas";
 const PeliculasProduct = () => {
   const { slug } = useParams<{ slug: string }>();
   const data = slug ? peliculasProducts[slug] : undefined;
-  if (!data) return <Navigate to="/ventas/peliculas-solares" replace />;
+  if (!data) return <Navigate to="/productos/peliculas-solares" replace />;
   return <ProductLanding data={data} />;
 };
 

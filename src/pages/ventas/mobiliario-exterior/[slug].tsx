@@ -11,7 +11,7 @@ import { mobiliarioItems } from "@/lib/content/products/mobiliario-items";
 const MobiliarioProduct = () => {
   const { slug } = useParams<{ slug: string }>();
   const data = slug ? mobiliarioProducts[slug] : undefined;
-  if (!data) return <Navigate to="/ventas/mobiliario-exterior" replace />;
+  if (!data) return <Navigate to="/productos/mobiliario-exterior" replace />;
 
   const subProducts = slug ? mobiliarioItems[slug] : undefined;
   const subSlugs = subProducts ? Object.keys(subProducts) : [];
@@ -25,7 +25,7 @@ const MobiliarioProduct = () => {
           <img src={data.heroImage.src} alt={data.heroImage.alt} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-primary/30" />
           <div className="absolute top-6 left-6">
-            <Link to="/ventas/mobiliario-exterior" className="inline-flex items-center gap-2 px-4 py-2 bg-card/90 backdrop-blur-sm rounded-sm text-sm font-body text-foreground hover:bg-card transition-colors">
+            <Link to="/productos/mobiliario-exterior" className="inline-flex items-center gap-2 px-4 py-2 bg-card/90 backdrop-blur-sm rounded-sm text-sm font-body text-foreground hover:bg-card transition-colors">
               ← Mobiliario Exterior
             </Link>
           </div>

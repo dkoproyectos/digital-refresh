@@ -21,7 +21,7 @@ const sharedProcess: ProductLandingData["process"] = [
   { icon: Wrench, title: "Instalación", description: "Montaje profesional con garantía en todos los mecanismos." },
 ];
 
-const parent = { label: "Cortinas y Persianas", href: "/ventas/cortinas-persianas" };
+const parent = { label: "Cortinas y Persianas", href: "/productos/cortinas-persianas" };
 
 export const cortinasProducts: Record<string, ProductLandingData> = {
   "roller": {
