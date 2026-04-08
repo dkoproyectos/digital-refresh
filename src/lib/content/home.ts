@@ -108,10 +108,10 @@ export const homeSaleCategories: SaleCategory[] = [
     image: { src: ventaRecubrimiento, alt: "Recubrimiento de paredes" },
     href: "/productos/recubrimiento",
     products: [
-      { name: "Paneles 3D decorativos", href: "/productos/recubrimiento/paneles-3d" },
-      { name: "Enchape de piedra natural", href: "/productos/recubrimiento/piedra-decorativa" },
-      { name: "Papel tapiz premium", href: "/productos/recubrimiento/papel-tapiz" },
-      { name: "Microcemento", href: "/productos/recubrimiento/microcemento" },
+      { name: "Papel de Colgadura", href: "/productos/recubrimiento/papel-colgadura" },
+      { name: "Panel para Muros", href: "/productos/recubrimiento/panel-muros" },
+      { name: "Paneles 3D", href: "/productos/recubrimiento/panel-muros/paneles-3d" },
+      { name: "Microcemento", href: "/productos/recubrimiento/panel-muros/microcemento" },
     ],
   },
   {
