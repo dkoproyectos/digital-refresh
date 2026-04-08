@@ -1,22 +1,23 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ArrowLeft, ArrowRight, ShoppingBag } from "lucide-react";
+import { ShoppingBag } from "lucide-react";
 import { Link } from "react-router-dom";
 import { homeSaleCategories } from "@/lib/content/home";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { useState } from "react";
 
 const VentasSection = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeId, setActiveId] = useState(homeSaleCategories[0].id);
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
-  const scrollTo = (direction: "prev" | "next") => {
-    setActiveIndex((prev) => {
-      if (direction === "next") return prev < homeSaleCategories.length - 1 ? prev + 1 : 0;
-      return prev > 0 ? prev - 1 : homeSaleCategories.length - 1;
-    });
-  };
-
-  const active = homeSaleCategories[activeIndex];
+  const active = homeSaleCategories.find((c) => c.id === activeId) ?? homeSaleCategories[0];
 
   return (
     <section id="productos" className="py-24 bg-primary" ref={ref}>
@@ -36,20 +37,19 @@ const VentasSection = () => {
           </p>
         </motion.div>
 
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {homeSaleCategories.map((cat, i) => (
-            <button
-              key={cat.id}
-              onClick={() => setActiveIndex(i)}
-              className={`px-5 py-2.5 rounded text-xs font-body font-semibold uppercase tracking-wider transition-all duration-300 border ${
-                activeIndex === i
-                  ? "bg-secondary text-secondary-foreground border-secondary shadow-lg"
-                  : "bg-transparent text-primary-foreground/70 border-primary-foreground/30 hover:border-secondary hover:text-secondary"
-              }`}
-            >
-              {cat.title.length > 20 ? cat.title.split(" ").slice(0, 2).join(" ") : cat.title}
-            </button>
-          ))}
+        <div className="flex justify-center mb-12">
+          <Select value={activeId} onValueChange={setActiveId}>
+            <SelectTrigger className="w-full max-w-sm bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground hover:border-secondary transition-colors text-sm font-semibold uppercase tracking-wider">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              {homeSaleCategories.map((cat) => (
+                <SelectItem key={cat.id} value={cat.id}>
+                  {cat.title}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
         </div>
 
         <motion.div
@@ -66,14 +66,6 @@ const VentasSection = () => {
               <span className="inline-block px-3 py-1 rounded text-[10px] font-semibold uppercase tracking-wider bg-secondary text-secondary-foreground">
                 {active.subtitle}
               </span>
-            </div>
-            <div className="absolute top-1/2 -translate-y-1/2 left-4 right-4 flex justify-between pointer-events-none">
-              <button onClick={() => scrollTo("prev")} className="pointer-events-auto w-10 h-10 rounded-full bg-foreground/65 backdrop-blur-sm flex items-center justify-center text-white hover:bg-secondary hover:text-secondary-foreground transition-colors">
-                <ArrowLeft size={18} />
-              </button>
-              <button onClick={() => scrollTo("next")} className="pointer-events-auto w-10 h-10 rounded-full bg-foreground/65 backdrop-blur-sm flex items-center justify-center text-white hover:bg-secondary hover:text-secondary-foreground transition-colors">
-                <ArrowRight size={18} />
-              </button>
             </div>
           </div>
 
@@ -105,18 +97,6 @@ const VentasSection = () => {
             <Link to={active.href} className="btn-gold text-xs py-3 px-8 self-start">Ver Catálogo Completo</Link>
           </div>
         </motion.div>
-
-        <div className="flex justify-center gap-2 mt-8">
-          {homeSaleCategories.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setActiveIndex(i)}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                activeIndex === i ? "w-8 bg-secondary" : "w-4 bg-primary-foreground/20 hover:bg-primary-foreground/40"
-              }`}
-            />
-          ))}
-        </div>
       </div>
     </section>
   );
