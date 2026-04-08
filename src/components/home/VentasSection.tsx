@@ -20,7 +20,7 @@ const VentasSection = () => {
   const active = homeSaleCategories.find((c) => c.id === activeId) ?? homeSaleCategories[0];
 
   return (
-    <section id="productos" className="py-24 bg-primary" ref={ref}>
+    <section id="productos" className="py-16 md:py-20 bg-primary" ref={ref}>
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
