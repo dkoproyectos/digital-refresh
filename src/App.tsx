@@ -49,6 +49,8 @@ const App = () => (
             <Route path="/servicios/hogar-vis/:slug" element={<HogarVisStyle />} />
             <Route path="/servicios/rentas-cortas" element={<RentasCortas />} />
             <Route path="/productos" element={<Productos />} />
+            <Route path="/productos/piedra-flexible" element={<PiedraFlexible />} />
+            <Route path="/productos/piedra-flexible/:slug" element={<PiedraFlexibleProduct />} />
             <Route path="/productos/recubrimiento" element={<Recubrimiento />} />
             <Route path="/productos/recubrimiento/:slug" element={<RecubrimientoProduct />} />
             <Route path="/productos/peliculas-solares" element={<PeliculasSolares />} />

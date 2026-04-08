@@ -29,7 +29,7 @@ const allOptions = [
 /** Sub-opciones por categoría seleccionada */
 const subOptionsMap: Record<string, string[]> = {
   "Tu Hogar VIS": ["Estilo Moderno", "Estilo Minimalista", "Estilo Industrial"],
-  "Piedra Flexible": ["Piedra flexible interior", "Piedra flexible exterior", "Piedra flexible fachadas"],
+  "Piedra Flexible": ["Piedra flexible interior", "Piedra flexible exterior", "Piedra flexible fachadas", "Piedra flexible muebles"],
   "Cortinas, Persianas y Toldos": ["Cortinas Roller", "Cortinas Blackout", "Sheer Elegance", "Persianas de Madera", "Persianas de Aluminio", "Toldos"],
   "Películas de Protección Solar": ["Control Solar", "Privacidad", "Seguridad", "Decorativa"],
   "Recubrimiento de Paredes": ["Paneles 3D", "Papel Tapiz", "Piedra Decorativa", "Enchapes Cerámicos", "Madera Decorativa", "Microcemento"],
