@@ -163,7 +163,7 @@ export const homeProjects: ProjectItem[] = [
   { image: { src: project1, alt: "Cocina Premium Cataya" }, title: "Cocina Premium Cataya", category: "Diseño Interior", location: "Cali, Valle" },
   { image: { src: project2, alt: "Oficinas Learn English" }, title: "Oficinas Learn English", category: "Corporativo", location: "Cali, Valle" },
   { image: { src: project3, alt: "Apartamento VIS Pie de Loma" }, title: "Apartamento VIS Pie de Loma", category: "Remodelación VIS", location: "Cali, Valle" },
-  { image: { src: project4, alt: "Cortinas Capilla SF" }, title: "Cortinas & Persianas Capilla SF", category: "Ventas", location: "Cali, Valle" },
+  { image: { src: project4, alt: "Cortinas Capilla SF" }, title: "Cortinas & Persianas Capilla SF", category: "Productos", location: "Cali, Valle" },
 ];
 
 // ─── ALIADOS ─────────────────────────────────────────────────

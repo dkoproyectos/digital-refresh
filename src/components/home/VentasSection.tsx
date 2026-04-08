@@ -19,7 +19,7 @@ const VentasSection = () => {
   const active = homeSaleCategories[activeIndex];
 
   return (
-    <section id="ventas" className="py-24 bg-primary" ref={ref}>
+    <section id="productos" className="py-24 bg-primary" ref={ref}>
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
